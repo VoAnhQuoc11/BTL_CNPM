@@ -1,0 +1,14 @@
+D:\BTL\KoiFishApp\KoiFishApp.Repositories\bin\Debug\net8.0\KoiFishApp.Repositories.deps.json
+D:\BTL\KoiFishApp\KoiFishApp.Repositories\bin\Debug\net8.0\KoiFishApp.Repositories.runtimeconfig.json
+D:\BTL\KoiFishApp\KoiFishApp.Repositories\bin\Debug\net8.0\KoiFishApp.Repositories.dll
+D:\BTL\KoiFishApp\KoiFishApp.Repositories\bin\Debug\net8.0\KoiFishApp.Repositories.pdb
+D:\BTL\KoiFishApp\KoiFishApp.Repositories\obj\Debug\net8.0\KoiFishApp.Repositories.csproj.AssemblyReference.cache
+D:\BTL\KoiFishApp\KoiFishApp.Repositories\obj\Debug\net8.0\KoiFishApp.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\BTL\KoiFishApp\KoiFishApp.Repositories\obj\Debug\net8.0\KoiFishApp.Repositories.AssemblyInfoInputs.cache
+D:\BTL\KoiFishApp\KoiFishApp.Repositories\obj\Debug\net8.0\KoiFishApp.Repositories.AssemblyInfo.cs
+D:\BTL\KoiFishApp\KoiFishApp.Repositories\obj\Debug\net8.0\KoiFishApp.Repositories.csproj.CoreCompileInputs.cache
+D:\BTL\KoiFishApp\KoiFishApp.Repositories\obj\Debug\net8.0\KoiFishApp.Repositories.dll
+D:\BTL\KoiFishApp\KoiFishApp.Repositories\obj\Debug\net8.0\refint\KoiFishApp.Repositories.dll
+D:\BTL\KoiFishApp\KoiFishApp.Repositories\obj\Debug\net8.0\KoiFishApp.Repositories.pdb
+D:\BTL\KoiFishApp\KoiFishApp.Repositories\obj\Debug\net8.0\KoiFishApp.Repositories.genruntimeconfig.cache
+D:\BTL\KoiFishApp\KoiFishApp.Repositories\obj\Debug\net8.0\ref\KoiFishApp.Repositories.dll

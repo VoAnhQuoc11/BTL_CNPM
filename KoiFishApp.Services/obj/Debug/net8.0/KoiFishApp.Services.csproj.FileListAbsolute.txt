@@ -1,0 +1,15 @@
+D:\BTL\KoiFishApp\KoiFishApp.Services\bin\Debug\net8.0\KoiFishApp.Services.deps.json
+D:\BTL\KoiFishApp\KoiFishApp.Services\bin\Debug\net8.0\KoiFishApp.Services.dll
+D:\BTL\KoiFishApp\KoiFishApp.Services\bin\Debug\net8.0\KoiFishApp.Services.pdb
+D:\BTL\KoiFishApp\KoiFishApp.Services\bin\Debug\net8.0\KoiFishApp.Repositories.dll
+D:\BTL\KoiFishApp\KoiFishApp.Services\bin\Debug\net8.0\KoiFishApp.Repositories.pdb
+D:\BTL\KoiFishApp\KoiFishApp.Services\obj\Debug\net8.0\KoiFishApp.Services.csproj.AssemblyReference.cache
+D:\BTL\KoiFishApp\KoiFishApp.Services\obj\Debug\net8.0\KoiFishApp.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\BTL\KoiFishApp\KoiFishApp.Services\obj\Debug\net8.0\KoiFishApp.Services.AssemblyInfoInputs.cache
+D:\BTL\KoiFishApp\KoiFishApp.Services\obj\Debug\net8.0\KoiFishApp.Services.AssemblyInfo.cs
+D:\BTL\KoiFishApp\KoiFishApp.Services\obj\Debug\net8.0\KoiFishApp.Services.csproj.CoreCompileInputs.cache
+D:\BTL\KoiFishApp\KoiFishApp.Services\obj\Debug\net8.0\KoiFishA.A4F14015.Up2Date
+D:\BTL\KoiFishApp\KoiFishApp.Services\obj\Debug\net8.0\KoiFishApp.Services.dll
+D:\BTL\KoiFishApp\KoiFishApp.Services\obj\Debug\net8.0\refint\KoiFishApp.Services.dll
+D:\BTL\KoiFishApp\KoiFishApp.Services\obj\Debug\net8.0\KoiFishApp.Services.pdb
+D:\BTL\KoiFishApp\KoiFishApp.Services\obj\Debug\net8.0\ref\KoiFishApp.Services.dll
