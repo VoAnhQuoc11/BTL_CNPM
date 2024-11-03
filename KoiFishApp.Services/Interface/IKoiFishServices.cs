@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace KoiFishApp.Services.Interface
 {
-    internal interface IKoiFishServices
+     public interface IKoiFishServices
     {
+        Task<List<KoiFish>> KoiFish();
     }
 }
