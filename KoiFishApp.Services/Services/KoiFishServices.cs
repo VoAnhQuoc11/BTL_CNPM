@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace KoiFishApp.Services.Services
 {
-    internal class KoiFishServices
+    public class KoiFishServices : IKoiFishServices
+{
+    private readonly IKoiFishRepositories _repositories;
+    public KoiFishServices(IKoiFishRepositories repositories)
     {
+        _repositories = repositories;
     }
+    public Task<List<KoiFish>> KoiFish()
+    {
+        return _repositories.GetAllKoiFish();
+    }
+}
 }
