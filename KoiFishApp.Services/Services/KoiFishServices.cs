@@ -17,5 +17,9 @@ namespace KoiFishApp.Services.Services
     {
         return _repositories.GetAllKoiFish();
     }
+    public async Task AddKoiFishAsync(KoiFish koiFish)
+    {
+    await _repositories.AddKoiFish(koiFish);
+    }
 }
 }
