@@ -8,6 +8,7 @@ builder.Services.AddDbContext<QlcktnContext>();
 builder.Services.AddScoped<IKoiFishRepositories, KoiFishRepositories>();
 // DI Services
 builder.Services.AddScoped<IKoiFishServices, KoiFishServices>();
+builder.Services.AddScoped<IPondServices, PondServices>(); // Đăng ký IPondServices
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
