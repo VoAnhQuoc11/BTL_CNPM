@@ -9,5 +9,6 @@ namespace KoiFishApp.Repositories.Interface
         public interface IKoiFishRepositories
     {
         Task<List<KoiFish>> GetAllKoiFish();
+        Task AddKoiFish(KoiFish koiFish);
     }
 }
