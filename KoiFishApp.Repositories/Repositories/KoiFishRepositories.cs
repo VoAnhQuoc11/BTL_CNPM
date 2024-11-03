@@ -18,5 +18,12 @@ namespace KoiFishApp.Repositories.Repositories
             // Sử dụng Include để lấy thông tin của bảng liên quan (Pond)
             return await _DbContext.KoiFishes.Include(k => k.Pond).ToListAsync();
        }
+       public async Task AddKoiFish(KoiFish koiFish)
+       {
+           // Thêm cá Koi vào DbSet
+           await _DbContext.KoiFishes.AddAsync(koiFish);
+           // Lưu các thay đổi vào cơ sở dữ liệu
+           await _DbContext.SaveChangesAsync();
+       }
     }
 }
