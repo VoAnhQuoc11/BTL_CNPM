@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" href="/css/styleSheet.css">
+    <style>
+        .report-card {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin: 10px;
+            background-color: #f8f9fa;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #ff0000; /* Màu đỏ cho phần thống kê */
+        }
+
+        .chart-section {
+            margin-top: 30px;
+        }
+
+        .header-title {
+            margin-top: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="header-title">Reports</h2>
+
+        <!-- Koi Growth Report Section -->
+        <h3 class="text-center mt-4">Koi Growth Report</h3>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-3 report-card">
+                <p>ID</p>
+                <div class="stat-value">7</div> <!-- Áp dụng màu đỏ -->
+            </div>
+            <div class="col-md-2 stat-card">
+                <p>Tên</p>
+                <div class="stat-value">Koi Vàng</div>
+            </div>
+            <div class="col-md-3 report-card">
+                <p>Đánh giá tăng trưởng</p>
+                <div class="stat-value">15 cm/year</div> <!-- Áp dụng màu đỏ -->
+            </div>
+        </div>
+        <!-- Koi Growth Chart -->
+        <div class="chart-section">
+            <h5 class="text-center">Tăng trưởng theo thời gian </h5>
+            <div id="koiGrowthChart" style="height: 250px;"></div>
+        </div>
+
+        <!-- Water Quality Report Section -->
+        <!-- Water Quality Report Section -->
+        <h3 class="text-center mt-5">Water Quality Report</h3>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-3 report-card">
+                <p>Pond ID</p>
+                <div class="stat-value">5</div> <!-- Áp dụng màu đỏ -->
+            </div>
+            <div class="col-md-3 report-card">
+                <p>Độ pH trung bình</p>
+                <div class="stat-value">7.2</div> <!-- Áp dụng màu đỏ -->
+            </div>
+            <div class="col-md-3 report-card">
+                <p>Mức độ Oxygen</p>
+                <div class="stat-value">8 mg/L</div> <!-- Áp dụng màu đỏ -->
+            </div>
+            <div class="col-md-3 report-card">
+                <!-- Thẻ mới thêm cho Nhiệt độ -->
+                <p>Nhiệt độ</p>
+                <div class="stat-value">25°C</div> <!-- Giá trị nhiệt độ -->
+            </div>
+        </div>
+        <!-- Water Quality Chart -->
+        <div class="chart-section">
+            <h5 class="text-center">Chất lượng nước theo thời gian</h5>
+            <div id="waterQualityChart" style="height: 250px;"></div>
+        </div>
+
+        <!-- Sales Report Section -->
+        <h3 class="text-center mt-5">Sales Report</h3>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-3 report-card">
+                <p> Tổng doanh thu </p>
+                <div class="stat-value">$15,000</div> <!-- Áp dụng màu đỏ -->
+            </div>
+            <div class="col-md-3 report-card">
+                <p> Đơn hàng đã hoàn thành</p>
+                <div class="stat-value">120</div> <!-- Áp dụng màu đỏ -->
+            </div>
+            <div class="col-md-3 report-card">
+                <p>Đơn hàng đang được xử lý</p>
+                <div class="stat-value">30</div> <!-- Áp dụng màu đỏ -->
+            </div>
+        </div>
+        <!-- Sales Chart -->
+        <div class="chart-section">
+            <h5 class="text-center">Tóm tắt doanh số</h5>
+            <div id="salesChart" style="height: 250px;"></div>
+        </div>
+    </div>
+
+    <!-- jQuery and Morris.js Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+        // Koi Growth Chart
+        new Morris.Line({
+            element: 'koiGrowthChart',
+            data: [
+                { year: '2020', growth: 10 },
+                { year: '2021', growth: 15 },
+                { year: '2022', growth: 20 },
+                { year: '2023', growth: 25 },
+                { year: '2024', growth: 30 }
+            ],
+            xkey: 'year',
+            ykeys: ['growth'],
+            labels: ['Growth (cm)'],
+            parseTime: false
+        });
+
+        // Water Quality Chart
+        new Morris.Line({
+            element: 'waterQualityChart',
+            data: [
+                { time: '8:00', pH: 7.2, oxygen: 8, temperature: 24 },
+                { time: '10:00', pH: 7.3, oxygen: 7.8, temperature: 25 },
+                { time: '12:00', pH: 7.1, oxygen: 7.9, temperature: 26 },
+                { time: '14:00', pH: 7.2, oxygen: 8.1, temperature: 25 },
+                { time: '16:00', pH: 7.3, oxygen: 8, temperature: 24 }
+            ],
+            xkey: 'time',
+            ykeys: ['pH', 'oxygen', 'temperature'],
+            labels: ['pH Level', 'Oxygen (mg/L)', 'Temperature (°C)'],
+            parseTime: false
+        });
+
+        // Sales Chart
+        new Morris.Bar({
+            element: 'salesChart',
+            data: [
+                { status: 'Total Sales', value: 15000 },
+                { status: 'Completed Orders', value: 120 },
+                { status: 'Pending Orders', value: 30 }
+            ],
+            xkey: 'status',
+            ykeys: ['value'],
+            labels: ['Amount']
+        });
+    </script>
+</body>
+</html>
