@@ -11,11 +11,11 @@ namespace KoiFishApp.WebApplication.Pages.CTKoiFish
 {
     public class DetailsModel : PageModel
     {
-        private readonly KoiFishApp.Repositories.Entities.QlcktnContext _context;
+        private readonly IKoiFishServices _services;
 
-        public DetailsModel(KoiFishApp.Repositories.Entities.QlcktnContext context)
+        public DetailsModel(IKoiFishServices services)
         {
-            _context = context;
+            _services = services;
         }
 
         public KoiFish KoiFish { get; set; } = default!;
@@ -27,7 +27,7 @@ namespace KoiFishApp.WebApplication.Pages.CTKoiFish
                 return NotFound();
             }
 
-            var koifish = await _context.KoiFishes.FirstOrDefaultAsync(m => m.KoiId == id);
+            var koifish = await _services.GetKoiFishByIdAsync(id.Value);
             if (koifish == null)
             {
                 return NotFound();
@@ -40,3 +40,4 @@ namespace KoiFishApp.WebApplication.Pages.CTKoiFish
         }
     }
 }
+
