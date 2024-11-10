@@ -12,11 +12,11 @@ namespace KoiFishApp.WebApplication.Pages.CTKoiFish
 {
     public class EditModel : PageModel
     {
-        private readonly KoiFishApp.Repositories.Entities.QlcktnContext _context;
+        private readonly IKoiFishServices _services;
 
-        public EditModel(KoiFishApp.Repositories.Entities.QlcktnContext context)
+        public EditModel(IKoiFishServices services)
         {
-            _context = context;
+            _services = services;
         }
 
         [BindProperty]
@@ -29,18 +29,19 @@ namespace KoiFishApp.WebApplication.Pages.CTKoiFish
                 return NotFound();
             }
 
-            var koifish =  await _context.KoiFishes.FirstOrDefaultAsync(m => m.KoiId == id);
+            var koifish = await _services.GetKoiFishByIdAsync(id.Value);
             if (koifish == null)
             {
                 return NotFound();
             }
             KoiFish = koifish;
-           ViewData["PondId"] = new SelectList(_context.Ponds, "PondId", "PondId");
+
+            var ponds = await _services.GetAllPondsAsync();
+            ViewData["PondId"] = new SelectList(ponds, "PondId", "PondId");
+
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -48,15 +49,13 @@ namespace KoiFishApp.WebApplication.Pages.CTKoiFish
                 return Page();
             }
 
-            _context.Attach(KoiFish).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
+                await _services.UpdateKoiFishAsync(KoiFish);
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!KoiFishExists(KoiFish.KoiId))
+                if (!await _services.KoiFishExistsAsync(KoiFish.KoiId))
                 {
                     return NotFound();
                 }
@@ -67,11 +66,6 @@ namespace KoiFishApp.WebApplication.Pages.CTKoiFish
             }
 
             return RedirectToPage("./Index");
-        }
-
-        private bool KoiFishExists(int id)
-        {
-            return _context.KoiFishes.Any(e => e.KoiId == id);
         }
     }
 }
