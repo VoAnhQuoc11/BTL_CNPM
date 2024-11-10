@@ -25,5 +25,32 @@ namespace KoiFishApp.Repositories.Repositories
            // Lưu các thay đổi vào cơ sở dữ liệu
            await _DbContext.SaveChangesAsync();
        }
+       public void DeleteKoiFish(KoiFish koiFish)  // Đảm bảo phương thức này nhận KoiFish
+       {
+           _DbContext.KoiFishes.Remove(koiFish);
+       }
+       // Triển khai GetKoiFishByIdAsync
+       public async Task<KoiFish?> GetKoiFishByIdAsync(int id)
+       {
+           return await _DbContext.KoiFishes.FirstOrDefaultAsync(k => k.KoiId == id);
+       }
+       public async Task SaveChangesAsync()  // Triển khai phương thức SaveChangesAsync
+       {
+           await _DbContext.SaveChangesAsync();
+       }
+       public void UpdateKoiFish(KoiFish koiFish)
+       {
+           _DbContext.KoiFishes.Update(koiFish);
+       }
+       
+       public async Task<bool> KoiFishExistsAsync(int id)
+       {
+           return await _DbContext.KoiFishes.AnyAsync(e => e.KoiId == id);
+       }
+
+       public async Task<List<Pond>> GetAllPondsAsync()
+       {
+           return await _DbContext.Ponds.ToListAsync();
+       }             
     }
 }
