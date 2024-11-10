@@ -21,5 +21,34 @@ namespace KoiFishApp.Services.Services
     {
     await _repositories.AddKoiFish(koiFish);
     }
+    //
+    public async Task DeleteKoiFishAsync(int id)
+    {
+        var koiFish = await _repositories.GetKoiFishByIdAsync(id);
+        if (koiFish != null)
+        {
+            _repositories.DeleteKoiFish(koiFish);
+            await _repositories.SaveChangesAsync();
+        }
+    }
+    public async Task<KoiFish?> GetKoiFishByIdAsync(int id)  // Triển khai phương thức này
+    {
+        return await _repositories.GetKoiFishByIdAsync(id);
+    }
+    public async Task UpdateKoiFishAsync(KoiFish koiFish)
+    {
+        _repositories.UpdateKoiFish(koiFish);
+        await _repositories.SaveChangesAsync();
+    }
+    
+    public async Task<bool> KoiFishExistsAsync(int id)
+    {
+        return await _repositories.KoiFishExistsAsync(id);
+    }
+    
+    public async Task<List<Pond>> GetAllPondsAsync()
+    {
+        return await _repositories.GetAllPondsAsync();
+    }
 }
 }
