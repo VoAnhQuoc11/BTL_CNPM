@@ -11,11 +11,11 @@ namespace KoiFishApp.WebApplication.Pages.CTKoiFish
 {
     public class DeleteModel : PageModel
     {
-        private readonly KoiFishApp.Repositories.Entities.QlcktnContext _context;
+        private readonly IKoiFishServices _services;
 
-        public DeleteModel(KoiFishApp.Repositories.Entities.QlcktnContext context)
+        public DeleteModel(IKoiFishServices services)
         {
-            _context = context;
+            _services = services;
         }
 
         [BindProperty]
@@ -28,7 +28,7 @@ namespace KoiFishApp.WebApplication.Pages.CTKoiFish
                 return NotFound();
             }
 
-            var koifish = await _context.KoiFishes.FirstOrDefaultAsync(m => m.KoiId == id);
+            var koifish = await _services.GetKoiFishByIdAsync(id.Value);
 
             if (koifish == null)
             {
@@ -48,13 +48,7 @@ namespace KoiFishApp.WebApplication.Pages.CTKoiFish
                 return NotFound();
             }
 
-            var koifish = await _context.KoiFishes.FindAsync(id);
-            if (koifish != null)
-            {
-                KoiFish = koifish;
-                _context.KoiFishes.Remove(KoiFish);
-                await _context.SaveChangesAsync();
-            }
+            await _services.DeleteKoiFishAsync(id.Value);
 
             return RedirectToPage("./Index");
         }
