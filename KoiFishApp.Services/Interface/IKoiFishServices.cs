@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace KoiFishApp.Services.Interface
 {
-    internal interface IKoiFishServices
+     public interface IKoiFishServices
     {
+          Task<List<KoiFish>> KoiFish();
+          Task AddKoiFishAsync(KoiFish koiFish);
+          //
+          Task DeleteKoiFishAsync(int id);
+          Task<KoiFish?> GetKoiFishByIdAsync(int id);
+          Task<List<Pond>> GetAllPondsAsync();
+          Task UpdateKoiFishAsync(KoiFish koiFish);
+          Task<bool> KoiFishExistsAsync(int id);
     }
 }

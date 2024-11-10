@@ -2,7 +2,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-
+// DI
+builder.Services.AddDbContext<QlcktnContext>();
+// DI Repositories
+builder.Services.AddScoped<IKoiFishRepositories, KoiFishRepositories>();
+// DI Services
+builder.Services.AddScoped<IKoiFishServices, KoiFishServices>();
+builder.Services.AddScoped<IPondServices, PondServices>(); // Đăng ký IPondServices
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

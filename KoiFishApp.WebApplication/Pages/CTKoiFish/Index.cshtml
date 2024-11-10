@@ -1,0 +1,90 @@
+﻿@page
+@model KoiFishApp.WebApplication.Pages.CTKoiFish.IndexModel
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KoiFish[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KoiFish[0].Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KoiFish[0].BodyShape)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KoiFish[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KoiFish[0].Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KoiFish[0].Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KoiFish[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KoiFish[0].Breed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KoiFish[0].Origin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KoiFish[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KoiFish[0].Pond)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.KoiFish) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BodyShape)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Breed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Origin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pond.PondId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.KoiId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.KoiId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.KoiId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

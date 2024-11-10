@@ -1,0 +1,82 @@
+﻿@page
+@model KoiFishApp.WebApplication.Pages.CTKoiFish.CreateModel
+
+<h4>KoiFish</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="KoiFish.KoiId" class="control-label"></label>
+                <input asp-for="KoiFish.KoiId" class="form-control" />
+                <span asp-validation-for="KoiFish.KoiId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.Name" class="control-label"></label>
+                <input asp-for="KoiFish.Name" class="form-control" />
+                <span asp-validation-for="KoiFish.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.Image" class="control-label"></label>
+                <input asp-for="KoiFish.Image" class="form-control" />
+                <span asp-validation-for="KoiFish.Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.BodyShape" class="control-label"></label>
+                <input asp-for="KoiFish.BodyShape" class="form-control" />
+                <span asp-validation-for="KoiFish.BodyShape" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.Age" class="control-label"></label>
+                <input asp-for="KoiFish.Age" class="form-control" />
+                <span asp-validation-for="KoiFish.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.Size" class="control-label"></label>
+                <input asp-for="KoiFish.Size" class="form-control" />
+                <span asp-validation-for="KoiFish.Size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.Weight" class="control-label"></label>
+                <input asp-for="KoiFish.Weight" class="form-control" />
+                <span asp-validation-for="KoiFish.Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.Gender" class="control-label"></label>
+                <input asp-for="KoiFish.Gender" class="form-control" />
+                <span asp-validation-for="KoiFish.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.Breed" class="control-label"></label>
+                <input asp-for="KoiFish.Breed" class="form-control" />
+                <span asp-validation-for="KoiFish.Breed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.Origin" class="control-label"></label>
+                <input asp-for="KoiFish.Origin" class="form-control" />
+                <span asp-validation-for="KoiFish.Origin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.Price" class="control-label"></label>
+                <input asp-for="KoiFish.Price" class="form-control" />
+                <span asp-validation-for="KoiFish.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.PondId" class="control-label"></label>
+                <select asp-for="KoiFish.PondId" class ="form-control" asp-items="ViewBag.PondId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
