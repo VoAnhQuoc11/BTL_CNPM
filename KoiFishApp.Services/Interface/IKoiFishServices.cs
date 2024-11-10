@@ -10,5 +10,11 @@ namespace KoiFishApp.Services.Interface
     {
           Task<List<KoiFish>> KoiFish();
           Task AddKoiFishAsync(KoiFish koiFish);
+          //
+          Task DeleteKoiFishAsync(int id);
+          Task<KoiFish?> GetKoiFishByIdAsync(int id);
+          Task<List<Pond>> GetAllPondsAsync();
+          Task UpdateKoiFishAsync(KoiFish koiFish);
+          Task<bool> KoiFishExistsAsync(int id);
     }
 }
