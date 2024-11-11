@@ -1,4 +1,4 @@
-﻿using KoiCare.Repositories.Enteteis;
+﻿using KoiCare.Repositories.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
