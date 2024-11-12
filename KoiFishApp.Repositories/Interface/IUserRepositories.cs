@@ -21,6 +21,6 @@ namespace KoiFishApp.Repositories.Intrefaces
 
 
 
-        User? GetUserByUsernameAndPassword(string username, string passwor
+        User? GetUserByUsernameAndPassword(string username, string password);
     }
 }
