@@ -1,0 +1,79 @@
+﻿@page
+@model KoiFishApp.WebApplication.Pages.Pond.EditModel
+
+<h4>Edit Pond</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- PondId (hidden) -->
+            <input type="hidden" asp-for="Pond.PondId" />
+
+            <!-- Pond Name -->
+            <div class="form-group">
+                <label asp-for="Pond.Name" class="control-label"></label>
+                <input asp-for="Pond.Name" class="form-control" />
+                <span asp-validation-for="Pond.Name" class="text-danger"></span>
+            </div>
+
+            <!-- Pond Image -->
+            <div class="form-group">
+                <label asp-for="Pond.Image" class="control-label"></label>
+                <input asp-for="Pond.Image" class="form-control" />
+                <span asp-validation-for="Pond.Image" class="text-danger"></span>
+            </div>
+
+            <!-- Pond Size -->
+            <div class="form-group">
+                <label asp-for="Pond.Size" class="control-label"></label>
+                <input asp-for="Pond.Size" class="form-control" />
+                <span asp-validation-for="Pond.Size" class="text-danger"></span>
+            </div>
+
+            <!-- Pond Depth -->
+            <div class="form-group">
+                <label asp-for="Pond.Depth" class="control-label"></label>
+                <input asp-for="Pond.Depth" class="form-control" />
+                <span asp-validation-for="Pond.Depth" class="text-danger"></span>
+            </div>
+
+            <!-- Pond Volume -->
+            <div class="form-group">
+                <label asp-for="Pond.Volume" class="control-label"></label>
+                <input asp-for="Pond.Volume" class="form-control" />
+                <span asp-validation-for="Pond.Volume" class="text-danger"></span>
+            </div>
+
+            <!-- Pond DrainCount -->
+            <div class="form-group">
+                <label asp-for="Pond.DrainCount" class="control-label"></label>
+                <input asp-for="Pond.DrainCount" class="form-control" />
+                <span asp-validation-for="Pond.DrainCount" class="text-danger"></span>
+            </div>
+
+            <!-- Pond Pump Capacity -->
+            <div class="form-group">
+                <label asp-for="Pond.PumpCapacity" class="control-label"></label>
+                <input asp-for="Pond.PumpCapacity" class="form-control" />
+                <span asp-validation-for="Pond.PumpCapacity" class="text-danger"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

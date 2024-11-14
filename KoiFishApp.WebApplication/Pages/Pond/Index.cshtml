@@ -1,0 +1,69 @@
+﻿@page
+@model KoiFishApp.WebApplication.Pages.Pond.IndexModel
+
+<p>
+    <a asp-page="Create">Create New Pond</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pond.First().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pond.First().Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pond.First().Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pond.First().Depth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pond.First().Volume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pond.First().DrainCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pond.First().PumpCapacity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pond in Model.Pond)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => pond.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => pond.Image)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => pond.Size)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => pond.Depth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => pond.Volume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => pond.DrainCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => pond.PumpCapacity)
+                </td>
+
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@pond.PondId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@pond.PondId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@pond.PondId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

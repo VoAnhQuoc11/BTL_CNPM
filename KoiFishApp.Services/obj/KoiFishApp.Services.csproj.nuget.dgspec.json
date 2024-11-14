@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BTL\\KoiFishApp\\KoiFishApp.Services\\KoiFishApp.Services.csproj": {}
+    "G:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj": {}
   },
   "projects": {
-    "D:\\BTL\\KoiFishApp\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj": {
+    "G:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BTL\\KoiFishApp\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj",
+        "projectUniqueName": "G:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj",
         "projectName": "KoiFishApp.Repositories",
-        "projectPath": "D:\\BTL\\KoiFishApp\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\BTL\\KoiFishApp\\KoiFishApp.Repositories\\obj\\",
+        "projectPath": "G:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "G:\\BTL_CNPM\\KoiFishApp.Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,17 +81,17 @@
         }
       }
     },
-    "D:\\BTL\\KoiFishApp\\KoiFishApp.Services\\KoiFishApp.Services.csproj": {
+    "G:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BTL\\KoiFishApp\\KoiFishApp.Services\\KoiFishApp.Services.csproj",
+        "projectUniqueName": "G:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj",
         "projectName": "KoiFishApp.Services",
-        "projectPath": "D:\\BTL\\KoiFishApp\\KoiFishApp.Services\\KoiFishApp.Services.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\BTL\\KoiFishApp\\KoiFishApp.Services\\obj\\",
+        "projectPath": "G:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "G:\\BTL_CNPM\\KoiFishApp.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -106,8 +106,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\BTL\\KoiFishApp\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj": {
-                "projectPath": "D:\\BTL\\KoiFishApp\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj"
+              "G:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj": {
+                "projectPath": "G:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj"
               }
             }
           }

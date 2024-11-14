@@ -16,12 +16,14 @@ public partial class QlcktnContext : DbContext
     }
 
     public virtual DbSet<KoiFish> KoiFishes { get; set; }
+    public virtual DbSet<GioHang> GioHangs { get; set; }
 
     public virtual DbSet<KoiGrowth> KoiGrowths { get; set; }
 
     public virtual DbSet<Pond> Ponds { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
+    public virtual DbSet<Product> Products { get; set; }
 
     public virtual DbSet<WaterParameter> WaterParameters { get; set; }
 

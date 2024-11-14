@@ -1,4 +1,7 @@
-﻿using System;
+﻿using KoiFishApp.Repositories.Entities;
+using KoiFishApp.Repositories.Interface;
+using KoiFishApp.Services.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

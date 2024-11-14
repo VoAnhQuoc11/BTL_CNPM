@@ -1,5 +1,5 @@
-﻿using KoiCare.Repositories.Entities;
-using KoiCare.Repositories.Interfaces;
+﻿using KoiCare.Repositories.Interfaces;
+using KoiFishApp.Repositories.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

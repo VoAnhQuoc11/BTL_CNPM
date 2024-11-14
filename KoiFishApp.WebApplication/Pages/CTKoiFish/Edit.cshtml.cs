@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using KoiFishApp.Repositories.Entities;
-
+using KoiFishApp.Services.Interface;
 namespace KoiFishApp.WebApplication.Pages.CTKoiFish
 {
     public class EditModel : PageModel

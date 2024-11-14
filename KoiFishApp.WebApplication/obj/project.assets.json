@@ -2785,19 +2785,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BTL\\KoiFishApp\\KoiFishApp.WebApplication\\KoiFishApp.WebApplication.csproj",
+      "projectUniqueName": "G:\\BTL_CNPM\\KoiFishApp.WebApplication\\KoiFishApp.WebApplication.csproj",
       "projectName": "KoiFishApp.WebApplication",
-      "projectPath": "D:\\BTL\\KoiFishApp\\KoiFishApp.WebApplication\\KoiFishApp.WebApplication.csproj",
-      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\BTL\\KoiFishApp\\KoiFishApp.WebApplication\\obj\\",
+      "projectPath": "G:\\BTL_CNPM\\KoiFishApp.WebApplication\\KoiFishApp.WebApplication.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "G:\\BTL_CNPM\\KoiFishApp.WebApplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2812,8 +2812,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\BTL\\KoiFishApp\\KoiFishApp.Services\\KoiFishApp.Services.csproj": {
-              "projectPath": "D:\\BTL\\KoiFishApp\\KoiFishApp.Services\\KoiFishApp.Services.csproj"
+            "G:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj": {
+              "projectPath": "G:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj"
             }
           }
         }

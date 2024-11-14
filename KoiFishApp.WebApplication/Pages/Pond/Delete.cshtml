@@ -1,0 +1,59 @@
+﻿@page
+@model KoiFishApp.WebApplication.Pages.Pond.DeleteModel 
+
+<h3>Are you sure you want to delete this Pond?</h3>
+
+<div>
+    <h4>Pond</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pond.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pond.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pond.Image)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pond.Image)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pond.Size)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pond.Size)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pond.Depth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pond.Depth)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pond.Volume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pond.Volume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pond.DrainCount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pond.DrainCount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pond.PumpCapacity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pond.PumpCapacity)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Pond.PondId" /> 
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

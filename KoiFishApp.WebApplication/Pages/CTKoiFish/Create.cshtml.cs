@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using KoiFishApp.Repositories.Entities;
 using KoiFishApp.Services.Interfaces;
+using KoiFishApp.Services.Interface;
 
 namespace KoiFishApp.WebApplication.Pages.CTKoiFish
 {

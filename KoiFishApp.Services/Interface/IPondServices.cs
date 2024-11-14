@@ -10,5 +10,13 @@ namespace KoiFishApp.Services.Interfaces
     public interface IPondServices
     {
         Task<List<Pond>> GetAllPondsAsync();
+
+        Task AddAsync(Pond pond);
+        //
+        Task DeleteAsync(int id);
+        Task<Pond?> GetByIdAsync(int id);
+        Task UpdateAsync(Pond pond);
+        Task<bool> isExistsAsync(int id);
+
     }
 }
