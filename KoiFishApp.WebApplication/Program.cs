@@ -7,22 +7,33 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();
-
-// Đăng ký DbContext
+// Cấu hình chuỗi kết nối cho DbContext
 builder.Services.AddDbContext<QlcktnContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Đăng ký repository và service
-builder.Services.AddScoped<IPondRepositories, PondRepositories>();  // Đăng ký IPondRepositories với PondRepositories
-builder.Services.AddScoped<IPondServices, PondServices>();  // Đăng ký IPondServices với PondServices
+// Đăng ký các dịch vụ và repository
+builder.Services.AddScoped<IPondServices, PondServices>();
+builder.Services.AddScoped<IPondRepositories, PondRepositories>();
+builder.Services.AddScoped<IWaterParameterRepositories, WaterParameterRepositores>();
+builder.Services.AddScoped<IWaterParameterServices, WaterParameterServices>();
+builder.Services.AddScoped<IKoiFishServices, KoiFishServices>();
+builder.Services.AddScoped<IKoiFishRepositories, KoiFishRepositories>();
+builder.Services.AddScoped<IKoiFishGrowthService, KoiFishGrowthService>();
+builder.Services.AddScoped<IKoiFishGrowthRepository, KoiFishGrowthRepository>();
+builder.Services.AddScoped<IUserServices, UserServices>();
+builder.Services.AddScoped<IUserRepositories, UserRepositories>();
 
-// Build the app
+// Thêm Razor Pages và các cấu hình khác
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline
-if (!app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
 {
     app.UseExceptionHandler("/Error");
     app.UseHsts();
@@ -34,5 +45,4 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
-
 app.Run();
