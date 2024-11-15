@@ -1,0 +1,47 @@
+﻿@page
+@model KoiFishApp.Pages.WaterParameters.DetailsModel
+@{
+    ViewData["Title"] = "Chi Tiết Thông Số Nước";
+}
+
+<h2 class="page-title">Chi Tiết Thông Số Nước</h2>
+
+<div class="parameter-details-card">
+    <div class="parameter-item">
+        <span class="parameter-label">Nhiệt độ:</span>
+        <span class="parameter-value">@Model.WaterParameter.Temperature °C</span>
+    </div>
+    <div class="parameter-item">
+        <span class="parameter-label">Độ mặn:</span>
+        <span class="parameter-value">@Model.WaterParameter.Salinity</span>
+    </div>
+    <div class="parameter-item">
+        <span class="parameter-label">pH:</span>
+        <span class="parameter-value">@Model.WaterParameter.Ph</span>
+    </div>
+    <div class="parameter-item">
+        <span class="parameter-label">Mức Oxy:</span>
+        <span class="parameter-value">@Model.WaterParameter.O2 mg/L</span>
+    </div>
+    <div class="parameter-item">
+        <span class="parameter-label">Mức No2:</span>
+        <span class="parameter-value">@Model.WaterParameter.No2 mg/L</span>
+    </div>
+    <div class="parameter-item">
+        <span class="parameter-label">Mức No3:</span>
+        <span class="parameter-value">@Model.WaterParameter.No3 mg/L</span>
+    </div>
+    <div class="parameter-item">
+        <span class="parameter-label">Mức Po4:</span>
+        <span class="parameter-value">@Model.WaterParameter.Po4 mg/L</span>
+    </div>
+    <div class="parameter-item">
+        <span class="parameter-label">Ngày đo:</span>
+        <span class="parameter-value">@Model.WaterParameter.MeasurementDate?.ToString("dd/MM/yyyy")</span>
+    </div>
+</div>
+
+<a asp-page="./Index" class="btn btn-secondary">Quay lại</a>
+
+
+

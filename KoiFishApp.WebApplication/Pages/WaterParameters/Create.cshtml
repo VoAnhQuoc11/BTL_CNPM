@@ -1,0 +1,65 @@
+﻿@page
+@model KoiFishApp.Pages.WaterParameters.CreateModel
+@{
+    ViewData["Title"] = "Thêm Thông Số Nước Mới";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="WaterParameter.Id">ID</label>
+        <input asp-for="WaterParameter.Id" class="form-control" />
+        <span asp-validation-for="WaterParameter.Id" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="WaterParameter_MeasurementDate">Chọn ngày đo:</label>
+        <input type="date" id="WaterParameter_MeasurementDate" name="WaterParameter.MeasurementDate" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WaterParameter.Temperature">Nhiệt độ</label>
+        <input asp-for="WaterParameter.Temperature" class="form-control" />
+        <span asp-validation-for="WaterParameter.Temperature" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WaterParameter.Salinity">Độ mặn</label>
+        <input asp-for="WaterParameter.Salinity" class="form-control" />
+        <span asp-validation-for="WaterParameter.Salinity" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WaterParameter.Ph">pH</label>
+        <input asp-for="WaterParameter.Ph" class="form-control" />
+        <span asp-validation-for="WaterParameter.Ph" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WaterParameter.O2">Oxy (mg/L)</label>
+        <input asp-for="WaterParameter.O2" class="form-control" />
+        <span asp-validation-for="WaterParameter.O2" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WaterParameter.No2">NO2 (mg/L)</label>
+        <input asp-for="WaterParameter.No2" class="form-control" />
+        <span asp-validation-for="WaterParameter.No2" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WaterParameter.No3">NO3 (mg/L)</label>
+        <input asp-for="WaterParameter.No3" class="form-control" />
+        <span asp-validation-for="WaterParameter.No3" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WaterParameter.Po4">PO4 (mg/L)</label>
+        <input asp-for="WaterParameter.Po4" class="form-control" />
+        <span asp-validation-for="WaterParameter.Po4" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Thêm</button>
+    <a asp-page="./Index" class="btn btn-secondary">Hủy</a>
+</form>

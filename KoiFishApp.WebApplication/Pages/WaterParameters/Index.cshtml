@@ -1,0 +1,124 @@
+﻿@page
+@model KoiFishApp.Pages.WaterParameters.IndexModel
+@{
+
+}
+<style>
+    /* Ẩn mũi tên trên các trình duyệt Chrome, Safari, Edge, và Opera */
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Ẩn mũi tên trên trình duyệt Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+<h2 class="water-parameters-title">Danh sách thông số nước</h2>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Ngày/Tháng/Năm</th>
+            <th>Nhiệt độ</th>
+            <th>Độ mặn</th>
+            <th>pH</th>
+            <th>Oxy</th>
+            <th>NO2</th>
+            <th>NO3</th>
+            <th>PO4</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.WaterParameters != null && Model.WaterParameters.Any())
+        {
+            @foreach (var item in Model.WaterParameters)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.MeasurementDate?.ToString("yyyy-MM-dd")</td>
+                    <td>@item.Temperature</td>
+                    <td>@item.Salinity</td>
+                    <td>@item.Ph</td>
+                    <td>@item.O2</td>
+                    <td>@item.No2</td>
+                    <td>@item.No3</td>
+                    <td>@item.Po4</td>
+                    <td>
+                        <a asp-page="./Details" asp-route-id="@item.Id">Chi tiết</a> |
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Sửa</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Xóa</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="9">Không có thông số nước nào.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-page="./Create">Thêm thông số mới</a>
+
+
+<!-- Form chọn ID hồ -->
+<h1 class ="water-parameters-title">Chọn hồ để đề xuất thông số nước</h1>
+
+<!-- Form nhập ID hồ -->
+<form method="get" class="mb-4">
+    <div class="form-group">
+        <label for="pondId">Nhập ID hồ:</label>
+        <input type="number" id="pondId" name="pondId" class="form-control" value="@(Model.SelectedPondId ?? 0)" min="1" required />
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Hiển Thị Thông Số Đề Xuất</button>
+</form>
+
+<!-- Kiểm tra và hiển thị thông số nước đề xuất của hồ đã chọn -->
+@if (Model.SelectedWaterParameter != null)
+{
+    <h2 class="suggested-parameters-title" >Thông số nước của bạn có hồ có ID: @Model.SelectedPondId</h2>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Ngày/Tháng/Năm</th>
+                <th>Nhiệt độ</th>
+                <th>Độ mặn</th>
+                <th>pH</th>
+                <th>Oxy</th>
+                <th>NO2</th>
+                <th>NO3</th>
+                <th>PO4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.SelectedWaterParameter.Id</td>
+                <td>@Model.SelectedWaterParameter.MeasurementDate?.ToString("yyyy-MM-dd")</td>
+                <td>@Model.SelectedWaterParameter.Temperature</td>
+                <td>@Model.SelectedWaterParameter.Salinity</td>
+                <td>@Model.SelectedWaterParameter.Ph</td>
+                <td>@Model.SelectedWaterParameter.O2</td>
+                <td>@Model.SelectedWaterParameter.No2</td>
+                <td>@Model.SelectedWaterParameter.No3</td>
+                <td>@Model.SelectedWaterParameter.Po4</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 class="mt-4">Gợi Ý:</h3>
+    <div class="alert alert-info suggestion-alert" role="alert">
+        @Html.Raw(Model.GetWaterParameterSuggestion(Model.SelectedWaterParameter))
+    </div>
+}
+
+else if (Model.SelectedPondId.HasValue)
+{
+    <p>Không có thông số nước đề xuất cho ID hồ đã chọn.</p>
+}

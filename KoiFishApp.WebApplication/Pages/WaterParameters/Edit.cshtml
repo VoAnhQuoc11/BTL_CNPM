@@ -1,0 +1,51 @@
+﻿@page
+@model KoiFishApp.Pages.WaterParameters.EditModel
+@{
+    ViewData["Title"] = "Chỉnh sửa thông số nước";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="WaterParameter.Id" />
+
+
+    <div class="form-group">
+        <label for="WaterParameter_MeasurementDate">Ngày đo:</label>
+        <input type="date" id="WaterParameter_MeasurementDate" name="WaterParameter.MeasurementDate" class="form-control" value="@Model.WaterParameter.MeasurementDate?.ToString("yyyy-MM-dd")" required />
+    </div>
+
+    <div class="form-group">
+        <label>Nhiệt độ</label>
+        <input asp-for="WaterParameter.Temperature" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Độ mặn</label>
+        <input asp-for="WaterParameter.Salinity" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>pH</label>
+        <input asp-for="WaterParameter.Ph" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Oxy</label>
+        <input asp-for="WaterParameter.O2" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>NO2</label>
+        <input asp-for="WaterParameter.No2" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>NO3</label>
+        <input asp-for="WaterParameter.No3" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>PO4</label>
+        <input asp-for="WaterParameter.Po4" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <a asp-page="./Index" class="btn btn-secondary">Hủy</a>
+
+</form>
