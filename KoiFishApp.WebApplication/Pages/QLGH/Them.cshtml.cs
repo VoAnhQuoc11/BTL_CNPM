@@ -45,8 +45,7 @@ namespace KoiFishApp.WebApplication.Pages.QLGH
                     Name = infoProduct.Name,
                     Price = infoProduct.Price,
                     Quantity = infoProduct.Quantity * 0 + 1,
-                    Description = infoProduct.Description
-                    // Lưu ý rằng ProductId sẽ được tự động tạo mới nếu cột này là tự tăng
+                    Description = infoProduct.Description                    
                 };
 
                 // Thêm bản sao vào cơ sở dữ liệu
