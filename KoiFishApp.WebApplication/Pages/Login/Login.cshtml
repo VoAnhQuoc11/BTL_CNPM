@@ -1,0 +1,38 @@
+﻿@page
+@model KoiFishApp.Pages.LoginModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - KoiFishApp</title>
+    <link href="~/css/login.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-custom">
+        <div class="login-container">
+            <div class="login-box">
+                <h2>Login</h2>
+                <form method="post">
+                    <input type="text" asp-for="Username" placeholder="Username" required />
+                    <input type="password" asp-for="Password" placeholder="Password" required />
+                    @if (Model.ErrorMessage != null)
+                    {
+                        <p class="error-message">@Model.ErrorMessage</p>
+                    }
+                    <button type="submit">Sign In</button>
+                    <p class="register-link">
+                        Don't have an account? <a href="/Dangky/Create">Register here</a>
+                    </p>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
