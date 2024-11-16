@@ -1,0 +1,84 @@
+﻿@page
+@model KoiFishApp.WebApplication.Pages.Account.EditModel
+
+@{
+    ViewData["Title"] = "Chỉnh Sửa Thông Tin Tài Khoản";
+}
+<h2>@ViewData["Title"]</h2>
+<link href="~/css/background.css" rel="stylesheet">
+<!-- Hiển thị các lỗi nếu có -->
+@if (!ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+<form method="post">
+    <div class="container text-center mt-3">
+        <label>Ảnh đã nhập:</label><br />
+        <img src="@(!string.IsNullOrEmpty(Model.User.Image) ? Model.User.Image : "/images/default_image.png")"
+             alt="User Image" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; margin-top: 20px;" />
+    </div>
+    <div class="form-group">
+        <label>Tên tài khoản</label>
+        <input asp-for="User.Username" class="form-control" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Họ và tên</label>
+        <input asp-for="User.FullName" class="form-control" />
+        <span asp-validation-for="User.FullName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input asp-for="User.Email" class="form-control" />
+        <span asp-validation-for="User.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Số điện thoại</label>
+        <input asp-for="User.Phone" class="form-control" type="tel" pattern="\d{10}" inputmode="numeric"
+               title="Số điện thoại phải có đúng 10 chữ số"
+               oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)" />
+        <span asp-validation-for="User.Phone" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label>Ngày Sinh</label>
+        <input asp-for="User.BirthDate" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Image</label>
+        <input asp-for="User.Image" class="form-control" />
+    </div>
+
+
+
+
+    <div class="form-group">
+        <label>Trạng thái</label>
+        <select asp-for="User.Status" class="form-select">
+            <option value="true" selected="@(Model.User.Status == true)">Online</option>
+            <option value="false" selected="@(Model.User.Status == false)">Offline</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Giới tính</label>
+        <select asp-for="User.Gender" class="form-select">
+            <option value="true" selected="@(Model.User.Gender == true)">Nam</option>
+            <option value="false" selected="@(Model.User.Gender == false)">Nữ</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <a asp-page="/Account/Info" class="btn btn-secondary">Quay lại</a>
+</form>

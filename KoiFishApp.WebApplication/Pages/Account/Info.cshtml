@@ -1,0 +1,35 @@
+﻿@page
+@model KoiFishApp.WebApplication.Pages.Account.InfoModel
+@{
+    ViewData["Title"] = "Thông Tin Tài Khoản";
+}
+<div class="back-button">
+    <a asp-page="/Menu" class="btn btn-secondary">Quay lại</a>
+</div>
+<h2 class="text-center">@ViewData["Title"]</h2>
+<link href="~/css/background.css" rel="stylesheet">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <div class="text-center mb-4">
+                <img src="@(!string.IsNullOrEmpty(Model.User.Image) ? Model.User.Image : "/images/default_image.png")"
+                     alt="User Image"
+                     style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid #ddd;" />
+            </div>
+
+            <div class="card p-3 mb-3 shadow-sm">
+                <p><strong>Tên tài khoản:</strong> @Model.User.Username</p>
+                <p><strong>Họ và tên:</strong> @Model.User.FullName</p>
+                <p><strong>Email:</strong> @Model.User.Email</p>
+                <p><strong>Số điện thoại:</strong> @Model.User.Phone</p>
+                <p><strong>Ngày Sinh:</strong> @Model.User.BirthDate</p>
+                <p><strong>Trạng Thái:</strong> @(Model.User.Status.HasValue ? (Model.User.Status.Value ? "Online" : "Offline") : "Chưa xác định")</p>
+                <p><strong>Giới tính:</strong> @(Model.User.Gender.HasValue ? (Model.User.Gender.Value ? "Nam" : "Nữ") : "Chưa xác định")</p>
+            </div>
+
+            <div class="text-center">
+                <a asp-page="/Account/Edit" class="btn btn-primary btn-lg">Chỉnh sửa thông tin</a>
+            </div>
+        </div>
+    </div>
+</div>
