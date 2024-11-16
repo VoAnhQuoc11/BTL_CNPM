@@ -1,0 +1,171 @@
+﻿@page
+@model KoiFishApp.WebApplication.Pages.QLGH.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    decimal totalAmount = Model.Product != null
+    ? Model.Product.Sum(p => (p.Price ?? 0) * (p.Quantity ?? 0))
+    : 0;
+
+}
+<div class="back-button">
+    <a asp-page="/Menu" class="btn btn-secondary">Quay lại</a>
+</div>
+<link href="~/css/background.css" rel="stylesheet">
+<h1 style="text-align: center; font-size: 2.5rem; font-weight: bold; color: #333;">Giỏ hàng</h1>
+
+<style>
+
+    .btn-view-product {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 20px auto;
+        font-size: 1.1rem;
+        display: block;
+        width: fit-content;
+    }
+
+        .btn-view-product:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+
+    .btn-checkout {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 20px auto;
+        font-size: 1.1rem;
+        display: block;
+        width: fit-content;
+        cursor: pointer;
+    }
+
+        .btn-checkout:hover {
+            background-color: #218838;
+        }
+
+    .table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    }
+
+        .table th, .table td {
+            text-align: center;
+            padding: 12px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+    .total-amount {
+        text-align: right;
+        width: 80%;
+        margin: 20px auto;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .image-popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid #333;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        background-color: #fff;
+        padding: 20px;
+        z-index: 1000;
+        text-align: center;
+    }
+
+        .image-popup img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+</style>
+
+<p>
+    <a asp-page="Them" class="btn-view-product">Xem sản phẩm</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Product[0].Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Product[0].Price)</th>
+            <th>@Html.DisplayNameFor(model => model.Product[0].Quantity)</th>
+            <th>@Html.DisplayNameFor(model => model.Product[0].Description)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+         @foreach (var item in Model.Product)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                <td>
+                    <a asp-page="./Delete" class="btn btn-danger" asp-route-id="@item.ProductId">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="total-amount">
+    Tổng cộng: @totalAmount.ToString("C")
+</div>
+
+@if (Model.Product != null && Model.Product.Count > 0)
+{
+    <p>
+        <button class="btn-checkout" onclick="showImage()">Thanh toán</button>
+    </p>
+}
+
+<!-- Popup hình ảnh -->
+<div class="overlay" onclick="hideImage()"></div>
+<div class="image-popup">
+    <img src="https://i.ibb.co/mBmcz4x/qrcode.png" alt="Thanh toán thành công" />
+    <p><button onclick="hideImage()">Đóng</button></p>
+</div>
+
+<script>
+    function showImage() {
+        document.querySelector('.image-popup').style.display = 'block';
+        document.querySelector('.overlay').style.display = 'block';
+    }
+
+    function hideImage() {
+        document.querySelector('.image-popup').style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
+    }
+</script>
