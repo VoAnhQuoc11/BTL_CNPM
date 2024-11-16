@@ -1,0 +1,155 @@
+﻿@page
+@model KoiFishApp.WebApplication.Pages.Dangky.CreateModel
+
+<style>
+    /* Định dạng và căn giữa form */
+    body {
+        background-image: url("https://i.ibb.co/QnLPh03/unnamed.png");
+        background-size: cover; /* Đảm bảo hình ảnh phủ đầy màn hình */
+        background-size: 100% 100%; /* Đặt kích thước ảnh nền cố định */
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 1.8rem;
+        color:aliceblue;
+        margin-bottom: 10px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .col-md-4 {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-size: 1rem;
+        color: #555;
+    }
+
+    input.form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+    .text-danger {
+        font-size: 0.9rem;
+        color: #d9534f;
+    }
+
+    hr {
+        border: 0.5px solid #ddd;
+        margin-bottom: 20px;
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+</style>
+
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="User.Id" class="control-label"></label>
+                <input asp-for="User.Id" type="CCCD" class="form-control" placeholder="Enter CCCD" />
+                <span asp-validation-for="User.Id" class="text-danger"></span>
+            </div>
+
+            <!-- Trường nhập Tài khoản (Username) -->
+            <div class="form-group">
+                <label asp-for="User.Username" class="control-label"></label>
+                <input asp-for="User.Username" class="form-control" placeholder="Enter Username" />
+                <span asp-validation-for="User.Username" class="text-danger"></span>
+            </div>
+
+            <!-- Trường nhập Họ tên đầy đủ (FullName) -->
+            <div class="form-group">
+                <label asp-for="User.FullName" class="control-label"></label>
+                <input asp-for="User.FullName" class="form-control" placeholder="Enter Full Name" />
+                <span asp-validation-for="User.FullName" class="text-danger"></span>
+            </div>
+
+            <!-- Trường nhập Mật khẩu -->
+            <div class="form-group">
+                <label asp-for="User.Password" class="control-label"></label>
+                <input asp-for="User.Password" type="password" class="form-control" placeholder="Enter Password" />
+                <span asp-validation-for="User.Password" class="text-danger"></span>
+            </div>
+
+    
+
+            <!-- Các trường thông tin khác -->
+
+            <!-- Nút Submit -->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div>
+    <a asp-page="/Login/Login">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

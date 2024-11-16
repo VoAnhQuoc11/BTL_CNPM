@@ -1,57 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using KoiFishApp.Repositories.Entities;
 using KoiFishApp.Services.Interfaces;
-
-namespace KoiFishApp.WebApplication.Pages.Pond
+using KoiFishApp.Repositories.Entities;
+namespace KoiFishApp.Pages.Pond
 {
     public class DeleteModel : PageModel
     {
-        private readonly IPondServices _services;
+        private readonly IPondServices _pondServices;
+        private readonly IKoiFishServices _koiFishServices;
 
-        public DeleteModel(IPondServices services)
+        public DeleteModel(IPondServices pondServices, IKoiFishServices koiFishServices)
         {
-            _services = services;
+            _pondServices = pondServices;
+            _koiFishServices = koiFishServices;
         }
 
         [BindProperty]
-        public KoiFishApp.Repositories.Entities.Pond Pond { get; set; } = default!;
+        public KoiFishApp.Repositories.Entities.Pond Pond { get; set; } = new KoiFishApp.Repositories.Entities.Pond();
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public List<KoiFish> KoiFishInPond { get; set; } = new List<KoiFish>();
+
+        public bool IsDeleteAttempted { get; set; } = false;
+
+        public async Task<IActionResult> OnGetAsync(int id)
         {
-            if (id == null)
+            Pond = await _pondServices.GetByIdAsync(id);
+
+            if (Pond == null)
             {
                 return NotFound();
             }
 
-            var pond = await _services.GetByIdAsync(id.Value);
+            // Lấy danh sách cá Koi đang sử dụng PondId này
+            KoiFishInPond = await _koiFishServices.KoiFish();
+            KoiFishInPond = KoiFishInPond.Where(k => k.PondId == id).ToList();
 
-            if (pond == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                this.Pond = pond;
-            }
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(int id)
         {
-            if (id == null)
+            IsDeleteAttempted = true;
+
+            try
             {
-                return NotFound();
+                await _pondServices.DeleteAsync(id);
+                return RedirectToPage("./Index");
             }
-
-            await _services.DeleteAsync(id.Value);
-
-            return RedirectToPage("./Index");
+            catch (InvalidOperationException ex)
+            {
+                ModelState.AddModelError(string.Empty, "Không thể xóa hồ này vì vẫn còn cá trong hồ.");
+                return Page();
+            }
         }
     }
 }

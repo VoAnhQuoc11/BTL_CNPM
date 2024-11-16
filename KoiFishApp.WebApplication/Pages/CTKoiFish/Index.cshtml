@@ -1,9 +1,13 @@
 ﻿@page
 @model KoiFishApp.WebApplication.Pages.CTKoiFish.IndexModel
-
+<link href="~/css/background.css" rel="stylesheet">
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<div class="back-button">
+    <a asp-page="/Menu" class="btn btn-secondary">Quay lại</a>
+</div>
+<link href="~/css/background.css" rel="stylesheet">
 <table class="table">
     <thead>
         <tr>
@@ -40,51 +44,63 @@
             <th>
                 @Html.DisplayNameFor(model => model.KoiFish[0].Pond)
             </th>
+            <th>Food Amount</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.KoiFish) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Image)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BodyShape)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Age)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Size)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Weight)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gender)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Breed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Origin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pond.PondId)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.KoiId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.KoiId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.KoiId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.KoiFish)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <img src="@item.Image" alt="Koi Fish Image" style="width: 120px; height:120px ;" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BodyShape)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Size)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Breed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Origin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pond.PondId)
+                </td>
+                <td>
+                    @if (Model.FoodAmounts.ContainsKey(item.KoiId))
+                    {
+                        @Model.FoodAmounts[item.KoiId].ToString("F2") <!-- Hiển thị lượng thức ăn -->
+                    }
+                    else
+                    {
+                        <span>Not Available</span>
+                    }
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.KoiId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.KoiId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.KoiId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

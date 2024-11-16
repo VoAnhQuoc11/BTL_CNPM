@@ -1,33 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using KoiFishApp.Repositories.Entities;
 using KoiFishApp.Services.Interfaces;
+using KoiFishApp.Repositories.Entities;
 
-namespace KoiFishApp.WebApplication.Pages.Pond
+namespace KoiFishApp.Pages.Pond
 {
-   public class CreateModel : PageModel
+    public class CreateModel : PageModel
     {
         private readonly IPondServices _pondServices;
+
+        [BindProperty]
+        public KoiFishApp.Repositories.Entities.Pond Pond { get; set; } = new KoiFishApp.Repositories.Entities.Pond();
 
         public CreateModel(IPondServices pondServices)
         {
             _pondServices = pondServices;
         }
 
-        public SelectList PondList { get; set; } = default!;
-
-        public async Task<IActionResult> OnGetAsync()
+        public void OnGet()
         {
-            return Page();
         }
-
-        [BindProperty]
-        public KoiFishApp.Repositories.Entities.Pond Pond { get; set; } = default!;
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -36,8 +28,18 @@ namespace KoiFishApp.WebApplication.Pages.Pond
                 return Page();
             }
 
+            // Kiểm tra nếu Pond ID đã tồn tại trong cơ sở dữ liệu
+            var existing = await _pondServices.GetByIdAsync(Pond.PondId);
+            if (existing != null)
+            {
+                ModelState.AddModelError("Pond.PondId", "ID này đã được sử dụng. Vui lòng chọn ID khác.");
+                return Page();
+            }
+
+            // Thêm Pond mới vào cơ sở dữ liệu
             await _pondServices.AddAsync(Pond);
 
+            // Chuyển hướng đến trang Index sau khi lưu thành công
             return RedirectToPage("./Index");
         }
     }

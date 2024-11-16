@@ -1,6 +1,6 @@
 ﻿@page
 @model KoiFishApp.WebApplication.Pages.CTKoiFish.EditModel
-
+<link href="~/css/background.css" rel="stylesheet">
 <h4>KoiFish</h4>
 <hr />
 <div class="row">
@@ -75,5 +75,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

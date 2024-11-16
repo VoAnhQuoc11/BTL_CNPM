@@ -1,6 +1,6 @@
 ﻿@page
 @model KoiFishApp.WebApplication.Pages.CTKoiFish.DeleteModel
-
+<link href="~/css/background.css" rel="stylesheet">
 <h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>KoiFish</h4>
@@ -73,7 +73,7 @@
             @Html.DisplayFor(model => model.KoiFish.Pond.PondId)
         </dd>
     </dl>
-    
+
     <form method="post">
         <input type="hidden" asp-for="KoiFish.KoiId" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |

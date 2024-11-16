@@ -1,0 +1,299 @@
+﻿@page
+@model KoiFishApp.WebApplication.Pages.Reports.IndexModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <div class="back-button">
+        <a asp-page="/Menu" class="btn btn-secondary">Quay lại</a>
+    </div>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" href="/css/styleSheet.css">
+    <style>
+        .report-card {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin: 10px;
+            background-color: #f8f9fa;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #ff0000; /* Màu đỏ cho phần thống kê */
+        }
+
+        .chart-section {
+            margin-top: 30px;
+        }
+
+        .header-title {
+            margin-top: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Dashboard Header -->
+        <div class="header-container">
+            <h2 class="header-title">Koi Reports</h2>
+        </div>
+    </div>
+    <!-- Koi Overview Section -->
+    <div class="section growth-section">
+        <h3 class="growth-title text-center">Koi Growth Reports</h3>
+        <div class="row justify-content-center mt-4">
+            <!-- Row 1 -->
+            <div class="col-md-2 stat-card">
+                <p>ID</p>
+                <div class="stat-value">551</div>
+            </div>
+            <div class="col-md-2 stat-card">
+                <p>ID</p>
+                <div class="stat-value">552</div>
+            </div>
+            <div class="col-md-2 stat-card">
+                <p>ID</p>
+                <div class="stat-value">553</div>
+            </div>
+            <!-- Row 2 -->
+            <div class="col-md-2 stat-card">
+                <p>ID</p>
+                <div class="stat-value">554</div>
+            </div>
+            <div class="col-md-2 stat-card">
+                <p>ID</p>
+                <div class="stat-value">555</div>
+            </div>
+            <div class="col-md-2 stat-card">
+                <p>Tên<p>
+                    <div class="stat-value">Sakura</div>
+            </div>
+            <!-- Row 3 -->
+            <div class="col-md-2 stat-card">
+                <p>Tên</p>
+                <div class="stat-value">Ryu</div>
+            </div>
+            <div class="col-md-2 stat-card">
+                <p>Tên</p>
+                <div class="stat-value">Akira</div>
+            </div>
+            <div class="col-md-2 stat-card">
+                <p>Tên</p>
+                <div class="stat-value">Yuki</div>
+            </div>
+            <!-- Row 4 -->
+            <div class="col-md-2 stat-card">
+                <p>Tên</p>
+                <div class="stat-value">Yukion</div>
+            </div>
+            <div class="col-md-2 stat-card">
+                <p>Tăng Trưởng</p>
+                <div class="stat-value">15cm/năm</div>
+            </div>
+            <div class="col-md-2 stat-card">
+                <p>Tăng Trưởng</p>
+                <div class="stat-value">12cm/năm</div>
+            </div>
+            <!-- Row 5 -->
+            <div class="col-md-2 stat-card">
+                <p>Tăng Trưởng</p>
+                <div class="stat-value">14cm/năm</div>
+            </div>
+            <div class="col-md-2 stat-card">
+                <p>Tăng Trưởng</p>
+                <div class="stat-value">11cm/năm</div>
+            </div>
+            <div class="col-md-2 stat-card">
+                <p>Tăng Trưởng</p>
+                <div class="stat-value">30cm/năm</div>
+            </div>
+        </div>
+        <!-- Koi Growth Chart -->
+        <div class="chart-section">
+            <h5 class="text-center">Koi Growth - Tăng trưởng theo thời gian </h5>
+            <div id="koiGrowthChart" style="height: 250px;"></div>
+        </div>
+
+        <!-- Water Quality Report Section -->
+        <div class="section growth-section">
+            <h3 class="growth-title text-center">Water Quality Report</h3>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-2 stat-card">
+                    <p>Pond ID</p>
+                    <div class="stat-value">1</div>
+                </div>
+                <div class="col-md-2 stat-card">
+                    <p>Pond ID</p>
+                    <div class="stat-value">2</div>
+                </div>
+                <div class="col-md-2 stat-card">
+                    <p>Pond ID</p>
+                    <div class="stat-value">3</div>
+                </div>
+                <div class="col-md-2 stat-card">
+                    <p>Pond ID</p>
+                    <div class="stat-value">4</div>
+                </div>
+                <!-- Row 2 -->
+                <div class="col-md-2 stat-card">
+                    <p>Pond ID</p>
+                    <div class="stat-value">5</div>
+                </div>
+                <div class="col-md-2 stat-card">
+                    <p>Mức độ pH</p>
+                    <div class="stat-value">7.1</div>
+                </div>
+                <div class="col-md-2 stat-card">
+                    <p>Mức độ pH</p>
+                    <div class="stat-value">7.5</div>
+                </div>
+                <div class="col-md-2 stat-card">
+                    <p>Mức độ pH</p>
+                    <div class="stat-value">7.3</div>
+                </div>
+                <!-- Row 3 -->
+                <div class="col-md-2 stat-card">
+                    <p>Mức độ pH</p>
+                    <div class="stat-value">7.2</div>
+                </div>
+                <div class="col-md-2 stat-card">
+                    <p>Mức độ pH</p>
+                    <div class="stat-value">7.0</div>
+                </div>
+                <div class="col-md-2 stat-card">
+                    <p>Mức độ Oxygen</p>
+                    <div class="stat-value">7.8 mg/L</div>
+                </div>
+                <div class="col-md-2 stat-card">
+                    <p>Mức độ Oxygen</p>
+                    <div class="stat-value">8.0 mg/L</div>
+                </div>
+                <!-- Row 4 -->
+                <div class="col-md-2 stat-card">
+                    <p>Mức độ Oxygen</p>
+                    <div class="stat-value">8.2 mg/L</div>
+                </div>
+                <div class="col-md-2 stat-card">
+                    <p>Mức độ Oxygen</p>
+                    <div class="stat-value">6.9 mg/L</div>
+                </div>
+                <div class="col-md-2 stat-card">
+                    <p>Mức độ Oxygen</p>
+                    <div class="stat-value">8.1 mg/L</div>
+                </div>
+                <div class="col-md-2 stat-card">
+                    <p>Nhiệt độ</p>
+                    <div class="stat-value">23°C</div>
+                </div>
+                <!-- Row 5 -->
+                <div class="col-md-2 stat-card">
+                    <p>Nhiệt độ</p>
+                    <div class="stat-value">26°C</div>
+                </div>
+                <div class="col-md-2 stat-card">
+                    <p>Nhiệt độ</p>
+                    <div class="stat-value">28°C</div>
+                </div>
+                <div class="col-md-2 stat-card">
+                    <p>Nhiệt độ</p>
+                    <div class="stat-value">25°C</div>
+                </div>
+                <div class="col-md-2 stat-card">
+                    <p>Nhiệt độ</p>
+                    <div class="stat-value">27°C</div>
+                </div>
+            </div>
+            <!-- Water Quality Chart -->
+            <div class="chart-section">
+                <h5 class="text-center">Water Quality Report - Chất lượng nước theo thời gian</h5>
+                <div id="waterQualityChart" style="height: 250px;"></div>
+            </div>
+
+            <!-- Sales Report Section -->
+            <div class="section growth-section">
+                <h3 class="growth-title text-center">Sales Report</h3>
+                <div class="row justify-content-center mt-4">
+                    <div class="col-md-3 report-card">
+                        <p> Tổng doanh thu </p>
+                        <div class="stat-value">$15,000</div> <!-- Áp dụng màu đỏ -->
+                    </div>
+                    <div class="col-md-3 report-card">
+                        <p> Doanh thu thâm hụt </p>
+                        <div class="stat-value">$1200</div> <!-- Áp dụng màu đỏ -->
+                    </div>
+                    <div class="col-md-3 report-card">
+                        <p>Số tiền bỏ ra</p>
+                        <div class="stat-value">$17000</div> <!-- Áp dụng màu đỏ -->
+                    </div>
+                </div>
+                <!-- Sales Chart -->
+                <div class="chart-section">
+                    <h5 class="text-center">Sales Report - Tóm tắt doanh số</h5>
+                    <div id="salesChart" style="height: 250px;"></div>
+                </div>
+            </div>
+
+            <!-- jQuery and Morris.js Scripts -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+            <script src="/js/script.js"></script>
+            <script>
+                // Koi Growth Chart
+                new Morris.Line({
+                    element: 'koiGrowthChart',
+                    data: [
+                        { year: '2020', growth: 10 },
+                        { year: '2021', growth: 15 },
+                        { year: '2022', growth: 20 },
+                        { year: '2023', growth: 25 },
+                        { year: '2024', growth: 30 }
+                    ],
+                    xkey: 'year',
+                    ykeys: ['growth'],
+                    labels: ['Growth (cm)'],
+                    parseTime: false
+                });
+
+                // Water Quality Chart
+                new Morris.Line({
+                    element: 'waterQualityChart',
+                    data: [
+                        { time: '8:00', pH: 7.2, oxygen: 8, temperature: 24 },
+                        { time: '10:00', pH: 7.3, oxygen: 7.8, temperature: 25 },
+                        { time: '12:00', pH: 7.1, oxygen: 7.9, temperature: 26 },
+                        { time: '14:00', pH: 7.2, oxygen: 8.1, temperature: 25 },
+                        { time: '16:00', pH: 7.3, oxygen: 8, temperature: 24 }
+                    ],
+                    xkey: 'time',
+                    ykeys: ['pH', 'oxygen', 'temperature'],
+                    labels: ['pH Level', 'Oxygen (mg/L)', 'Temperature (°C)'],
+                    parseTime: false
+                });
+
+                // Sales Chart
+                new Morris.Bar({
+                    element: 'salesChart',
+                    data: [
+                        { status: 'Tổng doanh thu', value: 15000 },
+                        { status: 'Doanh thu thâm hụt', value: 1200 },
+                        { status: 'Số tiền bỏ ra', value: 17000 }
+                    ],
+                    xkey: 'status',
+                    ykeys: ['value'],
+                    labels: ['Amount']
+                });
+            </script>
+</body>
+</html>

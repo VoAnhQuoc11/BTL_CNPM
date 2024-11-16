@@ -7,11 +7,10 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using KoiFishApp.Repositories.Entities;
 using KoiFishApp.Services.Interfaces;
-using KoiFishApp.Services.Interface;
 
 namespace KoiFishApp.WebApplication.Pages.CTKoiFish
 {
-   public class CreateModel : PageModel
+    public class CreateModel : PageModel
     {
         private readonly IKoiFishServices _koiFishServices;
         private readonly IPondServices _pondServices;
