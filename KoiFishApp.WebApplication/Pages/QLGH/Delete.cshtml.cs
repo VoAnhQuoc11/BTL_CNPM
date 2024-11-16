@@ -11,11 +11,12 @@ namespace KoiFishApp.WebApplication.Pages.QLGH
 {
     public class DeleteModel : PageModel
     {
-        private readonly QlcktnContext _context;
 
-        public DeleteModel(QlcktnContext context)
-        {
-            _context = context;
+        private readonly IProductsService _service;
+
+        public DeleteModel(IProductsService service)
+        {    
+            _service = service;            
         }
 
         [BindProperty]
@@ -23,12 +24,17 @@ namespace KoiFishApp.WebApplication.Pages.QLGH
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            int Id = 0;
+
             if (id == null)
             {
+                Id = 0;
                 return NotFound();
             }
 
-            var product = await _context.GioHangs.FirstOrDefaultAsync(m => m.ProductId == id);
+            Id = (int)id;
+
+            var product = await _service.FindProductInGioHangById(Id);
 
             if (product == null)
             {
@@ -48,12 +54,11 @@ namespace KoiFishApp.WebApplication.Pages.QLGH
                 return NotFound();
             }
 
-            var product = await _context.GioHangs.FindAsync(id);
+            var product = await _service.FindProductInGioHangById((int) id);
             if (product != null)
             {
                 Product = product;
-                _context.GioHangs.Remove(Product);
-                await _context.SaveChangesAsync();
+                _service.RemoveGioHang((int) id);
             }
 
             return RedirectToPage("./Index");
