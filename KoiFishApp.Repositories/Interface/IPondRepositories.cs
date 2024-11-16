@@ -18,5 +18,6 @@ namespace KoiFishApp.Repositories.Interface
         Task SaveChangesAsync();
         Task<bool> isExistsAsync(int id);
         Task<List<Pond>> GetAllPondsAsync();
+        Task<Pond> GetPondByIdAsync(int pondId);
     }
 }
