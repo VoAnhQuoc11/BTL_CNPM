@@ -1,4 +1,4 @@
-﻿using KoiFishApp.Repositories.Entities;
+using KoiFishApp.Repositories.Entities;
 using KoiFishApp.Repositories.Intrefaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,9 +6,9 @@ namespace KoiFishApp.Repositories
 {
     public class UserRepositories : IUserRepositories
     {
-        private readonly KoiFishApppContext _context; 
+        private readonly QlcktnContext _context;
 
-        public UserRepositories(KoiFishApppContext context)
+        public UserRepositories(QlcktnContext context)
         {
             _context = context;
         }
@@ -45,8 +45,8 @@ namespace KoiFishApp.Repositories
 
             user.Email = email;
             _context.Users.Update(user);
-             await _context.SaveChangesAsync();
-             return true;
+            await _context.SaveChangesAsync();
+            return true;
         }
 
         public async Task<bool> UpdateFullNameAsync(string userId, string fullName)
@@ -60,7 +60,7 @@ namespace KoiFishApp.Repositories
 
             user.FullName = fullName;
             _context.Users.Update(user);
-           await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             return true;
         }
 
@@ -71,7 +71,7 @@ namespace KoiFishApp.Repositories
 
             user.Gender = gender;
             _context.Users.Update(user);
-             await _context.SaveChangesAsync() ;
+            await _context.SaveChangesAsync();
             return true;
         }
 
@@ -108,14 +108,102 @@ namespace KoiFishApp.Repositories
             if (user == null) return false;
 
             user.Status = status;
-            _context.Users.Update(user);    
+            _context.Users.Update(user);
             await _context.SaveChangesAsync();
             return true;
         }
 
-      
+        public User CreateUser(string Id, string username, string fullname, string password, string imageUrl, bool gender, DateOnly birthDate, string phone, bool status, string email)
+        {
+            User user = new User();
+            user.Id = Id;
+            user.Username = username;
+            user.Email = email;
+            user.Gender = gender;
+            user.Password = password;
+            user.Image = imageUrl;
+            user.BirthDate = birthDate;
+            user.Phone = phone;
+            user.Status = status;
+            user.Email = email;
+            return user;
+
+        }
+        public async Task<bool> AddUser(User user)
+        {
+            try
+            {
+                await _context.Users.AddAsync(user);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
+
+
+        public async Task<bool> UpUser(User user)
+        {
+            try
+            {
+                _context.Users.Update(user);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> DelUser(string userId)
+        {
+            try
+            {
+                var user = await _context.Users.FindAsync(userId);
+                if (user == null) return false;
+
+                _context.Users.Remove(user);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
+        public async Task<bool> DelUser(User user)
+        {
+            try
+            {
+                var existingUser = await _context.Users.FindAsync(user.Id);
+                if (existingUser == null) return false;
+
+                _context.Users.Remove(existingUser);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
+        public async Task<List<User>> GetAllUser()
+        {
+            try
+            {
+                return await _context.Users.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                return new List<User>();
+            }
+        }
 
     }
 }
-
-    
