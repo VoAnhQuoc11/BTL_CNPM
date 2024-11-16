@@ -1,4 +1,4 @@
-﻿using KoiFishApp.Repositories.Entities;
+using KoiFishApp.Repositories.Entities;
 using KoiFishApp.Repositories.Intrefaces;
 using KoiFishApp.Sevices.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +14,7 @@ namespace KoiFishApp.Sevices
             _repositories = repositories;
         }
 
-	    public User? GetUserByUsernameAndPassword(string username, string password)
+        public User? GetUserByUsernameAndPassword(string username, string password)
         {
             return _repositories.GetUserByUsernameAndPassword(username, password);
         }
@@ -59,6 +59,35 @@ namespace KoiFishApp.Sevices
             return await _repositories.UpdateStatusAsync(userId, status);
         }
 
-      
+        public User CreateUser(string Id, string username, string fullname, string password, string imageUrl, bool gender, DateOnly birthDate, string phone, bool status, string email)
+        {
+            return  _repositories.CreateUser(Id, username,  fullname,  password,  imageUrl,  gender,  birthDate,  phone,  status,  email);
+        }
+        public async Task<bool> DelUser(string userId)
+        {
+            return await _repositories.DelUser(userId);
+        }
+
+        public async Task<bool> DelUser(User user)
+        {
+            return await _repositories.DelUser(user);
+        }
+
+        public async Task<bool> AddUser(User user)
+        {
+            return await _repositories.AddUser(user);
+        }
+
+        public async Task<bool> UpUser(User user)
+        {
+            return await _repositories.UpUser(user);
+        }
+
+        public async Task<List<User>> Users()
+        {
+            return await _repositories.GetAllUser();
+        }
+
     }
 }
+
