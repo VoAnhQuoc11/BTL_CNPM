@@ -22,4 +22,6 @@ public partial class Pond
     public double? PumpCapacity { get; set; }
 
     public virtual ICollection<KoiFish> KoiFishes { get; set; } = new List<KoiFish>();
+
+    public virtual ICollection<WaterParameter> WaterParameters { get; set; } = new List<WaterParameter>();
 }

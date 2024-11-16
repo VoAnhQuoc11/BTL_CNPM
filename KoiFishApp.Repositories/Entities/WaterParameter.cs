@@ -5,6 +5,8 @@ namespace KoiFishApp.Repositories.Entities;
 
 public partial class WaterParameter
 {
+    public int Id { get; set; }
+
     public DateTime? MeasurementDate { get; set; }
 
     public double? Temperature { get; set; }
