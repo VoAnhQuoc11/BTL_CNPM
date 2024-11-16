@@ -1,9 +1,11 @@
-﻿using KoiFishApp.Repositories.Entities;
-using KoiFishApp.Repositories.Interface;
-using Microsoft.EntityFrameworkCore;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using KoiFishApp.Repositories.Entities;
+using KoiFishApp.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace KoiFishApp.Repositories.Repositories
 {
@@ -20,9 +22,10 @@ namespace KoiFishApp.Repositories.Repositories
         // Thêm một Pond mới vào cơ sở dữ liệu
         public async Task Add(Pond pond)
         {
-            await _DbContext.Ponds.AddAsync(pond);  // Thêm đối tượng Pond vào DbSet
-            await _DbContext.SaveChangesAsync();  // Lưu thay đổi vào cơ sở dữ liệu
+            await _DbContext.Ponds.AddAsync(pond); // Thêm Pond vào DbContext mà không chỉ định giá trị cho PondID
+            await _DbContext.SaveChangesAsync(); // Lưu thay đổi vào cơ sở dữ liệu
         }
+
 
         public async Task<bool> isExistsAsync(int id)
         {
@@ -30,10 +33,16 @@ namespace KoiFishApp.Repositories.Repositories
         }
 
         // Xóa một Pond khỏi cơ sở dữ liệu
-        public async Task Delete(Pond pond)
+        public async Task Delete(int id)
         {
-            _DbContext.Ponds.Remove(pond);  // Xóa Pond khỏi DbSet
-            await _DbContext.SaveChangesAsync();  // Lưu thay đổi vào cơ sở dữ liệu
+            var pond = await _DbContext.Ponds.FindAsync(id);
+            if (pond == null)
+            {
+                throw new InvalidOperationException("The pond does not exist or has already been deleted.");
+            }
+
+            _DbContext.Ponds.Remove(pond);
+            await _DbContext.SaveChangesAsync();
         }
 
         // Lấy tất cả các Pond từ cơ sở dữ liệu
@@ -73,6 +82,6 @@ namespace KoiFishApp.Repositories.Repositories
             await _DbContext.SaveChangesAsync();  // Lưu thay đổi vào cơ sở dữ liệu
         }
 
-      
+
     }
 }
