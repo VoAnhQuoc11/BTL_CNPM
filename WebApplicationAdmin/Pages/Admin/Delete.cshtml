@@ -1,0 +1,20 @@
+﻿@page
+@model KoiFishApp.WebApplication.Pages.Admin.DeleteModel
+<link href="~/css/background.css" rel="stylesheet">
+<h2>Xác nhận xóa người dùng</h2>
+
+@if (Model.User != null)
+{
+    <div>
+        <p>Bạn có chắc chắn muốn xóa người dùng <strong>@Model.User.Username</strong> (ID: @Model.User.Id)?</p>
+    </div>
+
+    <form method="post">
+        <button type="submit" class="btn btn-danger">Xóa</button>
+        <a href="/admin/Index" class="btn btn-secondary">Hủy</a>
+    </form>
+}
+else
+{
+    <p>Không tìm thấy người dùng này.</p>
+}

@@ -1,0 +1,47 @@
+﻿@page
+@model KoiFishApp.WebApplication.Pages.Admin.IndexModel
+<link href="~/css/background.css" rel="stylesheet">
+@{
+    ViewData["Title"] = "Quản lý tài khoản";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Quản lý tài khoản</h1>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="text-secondary">Danh sách tài khoản</h3>
+        <a asp-page="Create" class="btn btn-success">+ Tạo tài khoản mới</a>
+    </div>
+
+    <table class="table table-hover table-bordered align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th class="text-center">Tên đăng nhập</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">Vai trò</th>
+                <th class="text-center">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Users)
+            {
+                <tr>
+                    <td class="text-center">
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td class="text-center">
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td class="text-center">
+                        @Html.DisplayFor(modelItem => item.Role)
+                    </td>
+                    <td class="text-center">
+                        <a asp-page="/Admin/Edit" asp-route-userId="@item.Id" class="btn btn-primary btn-sm me-2">Sửa</a>
+                        <a asp-page="/Admin/Details" asp-route-userId="@item.Id" class="btn btn-info btn-sm me-2">Chi tiết</a>
+                        <a asp-page="/Admin/Delete" asp-route-userId="@item.Id" class="btn btn-danger btn-sm">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

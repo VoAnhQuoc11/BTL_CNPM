@@ -1,0 +1,94 @@
+﻿@page
+@model KoiFishApp.WebApplication.Pages.Admin.EditModel
+
+@{
+    ViewData["Title"] = "Chỉnh sửa tài khoản";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Chỉnh sửa tài khoản</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" class="border p-4 rounded shadow">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <input type="hidden" asp-for="User.Id" />
+
+                <div class="mb-3">
+                    <label asp-for="User.Username" class="form-label">Tên đăng nhập</label>
+                    <input asp-for="User.Username" class="form-control" readonly />
+                    <span asp-validation-for="User.Username" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="User.FullName" class="form-label">Họ và tên</label>
+                    <input asp-for="User.FullName" class="form-control" />
+                    <span asp-validation-for="User.FullName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="User.BirthDate" class="form-label">Ngày sinh</label>
+                    <input asp-for="User.BirthDate" type="date" class="form-control" />
+                    <span asp-validation-for="User.BirthDate" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="User.Gender" class="form-label">Giới tính</label>
+                    <select asp-for="User.Gender" class="form-select">
+                        <option value="true" selected="@(Model.User.Gender == true)">Nam</option>
+                        <option value="false" selected="@(Model.User.Gender == false)">Nữ</option>
+                    </select>
+                    <span asp-validation-for="User.Gender" class="text-danger"></span>
+                </div>
+
+             
+                <div class="mb-3">
+                    <label asp-for="User.Password" class="form-label">Mật khẩu</label>
+                    <input asp-for="User.Password" class="form-control" />
+                    <span asp-validation-for="User.Password" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="User.Image" class="form-label">Ảnh đại diện</label>
+                    <input asp-for="User.Image" type="file" class="form-control" />
+                    <span asp-validation-for="User.Image" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="User.Status" class="form-label">Trạng thái</label>
+                    <input asp-for="User.Status" class="form-control" />
+                    <span asp-validation-for="User.Status" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="User.Phone" class="form-label">Số điện thoại</label>
+                    <input asp-for="User.Phone" type="tel" class="form-control" />
+                    <span asp-validation-for="User.Phone" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="User.Email" class="form-label">Email</label>
+                    <input asp-for="User.Email" type="email" class="form-control" />
+                    <span asp-validation-for="User.Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="User.Role" class="form-label">Vai trò</label>
+                    <select asp-for="User.Role" class="form-select">
+                        <option value="Admin">Admin</option>
+                        <option value="Employee">Employee</option>
+                        <option value="Customer">Customer</option>
+                    </select>
+                    <span asp-validation-for="User.Role" class="text-danger"></span>
+                </div>
+
+                <div class="d-grid">
+                    <input type="submit" value="Lưu thay đổi" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="mt-4 text-center">
+        <a asp-page="./Index" class="btn btn-secondary">Quay lại danh sách</a>
+    </div>
+</div>

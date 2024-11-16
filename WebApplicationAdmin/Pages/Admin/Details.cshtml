@@ -1,0 +1,81 @@
+﻿@page
+@model KoiFishApp.WebApplication.Pages.Admin.DetailsModel
+<link href="~/css/background.css" rel="stylesheet">
+<div class="container mt-5">
+    <h2 class="text-center text-primary mb-4">Chi tiết người dùng</h2>
+
+    @if (Model.User != null)
+    {
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Thông tin chi tiết</h4>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>ID:</strong></div>
+                    <div class="col-sm-8">@Model.User.Id</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Tên đăng nhập:</strong></div>
+                    <div class="col-sm-8">@Model.User.Username</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Họ và Tên:</strong></div>
+                    <div class="col-sm-8">@Model.User.FullName</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Ngày sinh:</strong></div>
+                    <div class="col-sm-8">@Model.User.BirthDate</div>
+
+
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Giới tính:</strong></div>
+                    <div class="col-sm-8">
+                        @(Model.User.Gender.HasValue ? (Model.User.Gender.Value ? "Nam" : "Nữ") : "Chưa xác định")
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Ảnh đại diện:</strong></div>
+                    <div class="col-sm-8">
+                        @if (!string.IsNullOrEmpty(Model.User.Image))
+                        {
+                            <img src="@Model.User.Image" alt="Ảnh đại diện" class="img-thumbnail" style="max-width: 150px;" />
+                        }
+                        else
+                        {
+                            <span>Không có ảnh</span>
+                        }
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Trạng thái:</strong></div>
+                    <div class="col-sm-8">@Model.User.Status</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Số điện thoại:</strong></div>
+                    <div class="col-sm-8">@Model.User.Phone</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Email:</strong></div>
+                    <div class="col-sm-8">@Model.User.Email</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Vai trò:</strong></div>
+                    <div class="col-sm-8">@Model.User.Role</div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger text-center">
+            Không tìm thấy người dùng này.
+        </div>
+    }
+
+    <div class="mt-4 text-center">
+        <a href="/admin/Index" class="btn btn-secondary">Quay lại</a>
+    </div>
+</div>
