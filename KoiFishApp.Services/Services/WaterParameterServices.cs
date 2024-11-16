@@ -6,7 +6,7 @@ using KoiFishApp.Repositories.Interfaces;
 using KoiFishApp.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace KoiFishApp.Services.Services
+namespace KoiFishAppServices.Services
 {
     public class WaterParameterServices : IWaterParameterServices
     {
@@ -81,15 +81,15 @@ namespace KoiFishApp.Services.Services
             return waterParameter;
         }
         public class WaterParameterStandard
-{
-                public const double IdealTemperature = 22.0; // Nhiệt độ lý tưởng
-                public const double IdealSalinity = 0.2; // Độ mặn lý tưởng
-                public const double IdealPh = 7.5; // pH lý tưởng
-                public const double IdealO2 = 8.0; // O2 lý tưởng
-                public const double IdealNo2 = 0.0; // NO2 lý tưởng
-                public const double IdealNo3 = 25.0; // NO3 lý tưởng
-                public const double IdealPo4 = 1.0; // PO4 lý tưởng
-}
+        {
+            public const double IdealTemperature = 22.0; // Nhiệt độ lý tưởng
+            public const double IdealSalinity = 0.2; // Độ mặn lý tưởng
+            public const double IdealPh = 7.5; // pH lý tưởng
+            public const double IdealO2 = 8.0; // O2 lý tưởng
+            public const double IdealNo2 = 0.0; // NO2 lý tưởng
+            public const double IdealNo3 = 25.0; // NO3 lý tưởng
+            public const double IdealPo4 = 1.0; // PO4 lý tưởng
+        }
 
         public string GetWaterParameterSuggestion(WaterParameter parameter)
         {
@@ -260,3 +260,4 @@ namespace KoiFishApp.Services.Services
 
     }
 }
+    
