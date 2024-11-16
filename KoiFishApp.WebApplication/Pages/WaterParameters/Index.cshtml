@@ -3,6 +3,10 @@
 @{
 
 }
+<link href="~/css/background.css" rel="stylesheet">
+<div class="back-button">
+    <a asp-page="/Menu" class="btn btn-secondary">Quay lại</a>
+</div>
 <style>
     /* Ẩn mũi tên trên các trình duyệt Chrome, Safari, Edge, và Opera */
     input[type=number]::-webkit-outer-spin-button,
@@ -49,9 +53,9 @@
                     <td>@item.No3</td>
                     <td>@item.Po4</td>
                     <td>
-                        <a asp-page="./Details" asp-route-id="@item.Id">Chi tiết</a> |
-                        <a asp-page="./Edit" asp-route-id="@item.Id">Sửa</a> |
-                        <a asp-page="./Delete" asp-route-id="@item.Id">Xóa</a>
+                        <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-info btn-sm me-2">Chi tiết</a>
+                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Sửa</a>
+        @*                 <a asp-page="./Delete" asp-route-id="@item.Id">Xóa</a> *@
                     </td>
                 </tr>
             }
@@ -65,11 +69,11 @@
     </tbody>
 </table>
 
-<a asp-page="./Create">Thêm thông số mới</a>
+@* <a asp-page="./Create">Thêm thông số mới</a> *@
 
 
 <!-- Form chọn ID hồ -->
-<h1 class ="water-parameters-title">Chọn hồ để đề xuất thông số nước</h1>
+<h1 class="water-parameters-title">Chọn hồ để đề xuất thông số nước</h1>
 
 <!-- Form nhập ID hồ -->
 <form method="get" class="mb-4">
@@ -83,7 +87,7 @@
 <!-- Kiểm tra và hiển thị thông số nước đề xuất của hồ đã chọn -->
 @if (Model.SelectedWaterParameter != null)
 {
-    <h2 class="suggested-parameters-title" >Thông số nước của bạn có hồ có ID: @Model.SelectedPondId</h2>
+    <h2 class="suggested-parameters-title">Thông số nước của bạn có hồ có ID: @Model.SelectedPondId</h2>
     <table class="table">
         <thead class="thead-dark">
             <tr>
