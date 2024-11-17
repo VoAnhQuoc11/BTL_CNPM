@@ -74,5 +74,9 @@ namespace KoiFishApp.Services.Services
             await _repositories.Update(pond);
             await _repositories.SaveChangesAsync();
         }
+        public async Task<Pond> GetPondByIdAsync(int pondId)
+        {
+            return await _repositories.GetPondByIdAsync(pondId);
+        }
     }
 }
