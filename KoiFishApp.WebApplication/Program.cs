@@ -22,6 +22,8 @@ builder.Services.AddScoped<IKoiFishGrowthService, KoiFishGrowthService>();
 builder.Services.AddScoped<IKoiFishGrowthRepository, KoiFishGrowthRepository>();
 builder.Services.AddScoped<IUserServices, UserServices>();
 builder.Services.AddScoped<IUserRepositories, UserRepositories>();
+builder.Services.AddScoped<IProducts, ProductsRepository>();
+builder.Services.AddScoped<IProductsService, ProductsService>();
 
 // Thêm Razor Pages và các cấu hình khác
 builder.Services.AddControllersWithViews();
