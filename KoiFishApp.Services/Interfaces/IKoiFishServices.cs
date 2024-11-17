@@ -19,6 +19,6 @@ namespace KoiFishApp.Services.Interfaces
         Task UpdateKoiFishAsync(KoiFish koiFish);
         Task<bool> KoiFishExistsAsync(int id);
         //
-        Task<decimal> CalculateFoodAmount(int koiFishId);
+        
     }
 }
