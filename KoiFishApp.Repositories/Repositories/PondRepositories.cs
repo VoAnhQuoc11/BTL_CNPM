@@ -81,7 +81,10 @@ namespace KoiFishApp.Repositories.Repositories
             _DbContext.Ponds.Update(pond);  // Cập nhật Pond trong DbSet
             await _DbContext.SaveChangesAsync();  // Lưu thay đổi vào cơ sở dữ liệu
         }
-
+        public async Task<Pond> GetPondByIdAsync(int pondId)
+        {
+            return await _DbContext.Ponds.FirstOrDefaultAsync(p => p.PondId == pondId);
+        }
 
     }
 }
