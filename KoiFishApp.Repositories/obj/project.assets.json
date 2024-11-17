@@ -4045,11 +4045,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj",
+      "projectUniqueName": "F:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj",
       "projectName": "KoiFishApp.Repositories",
-      "projectPath": "G:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj",
+      "projectPath": "F:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "G:\\BTL_CNPM\\KoiFishApp.Repositories\\obj\\",
+      "outputPath": "F:\\BTL_CNPM\\KoiFishApp.Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -9,87 +9,179 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = KoiFishApp.WebApplication
 build_property.RootNamespace = KoiFishApp.WebApplication
-build_property.ProjectDir = G:\BTL_CNPM\KoiFishApp.WebApplication\
+build_property.ProjectDir = F:\BTL_CNPM\KoiFishApp.WebApplication\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = G:\BTL_CNPM\KoiFishApp.WebApplication
+build_property.MSBuildProjectDirectory = F:\BTL_CNPM\KoiFishApp.WebApplication
 build_property._RazorSourceGeneratorDebug = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/CTKoiFish/Create.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Account/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Account/Info.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxJbmZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/CTKoiFish/AddKoiGrowth.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ1RLb2lGaXNoXEFkZEtvaUdyb3d0aC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/CTKoiFish/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ1RLb2lGaXNoXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/CTKoiFish/Delete.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/CTKoiFish/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ1RLb2lGaXNoXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/CTKoiFish/Details.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/CTKoiFish/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ1RLb2lGaXNoXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/CTKoiFish/Edit.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/CTKoiFish/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ1RLb2lGaXNoXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/CTKoiFish/Index.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/CTKoiFish/EditGrowthRecord.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ1RLb2lGaXNoXEVkaXRHcm93dGhSZWNvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/CTKoiFish/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ1RLb2lGaXNoXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Error.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Dangky/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFuZ2t5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Dangky/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFuZ2t5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/EditProducts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFByb2R1Y3RzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/EditProducts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFByb2R1Y3RzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/EditProducts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFByb2R1Y3RzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Index.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Pond/Create.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Login/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Menu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVudS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Pond/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9uZFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Pond/Delete.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Pond/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9uZFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Pond/Details.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Pond/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9uZFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Pond/Edit.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Pond/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9uZFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Pond/Index.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Pond/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9uZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Privacy.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/QLGH/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUUxHSFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/QLGH/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUUxHSFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/QLGH/Them.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUUxHSFxUaGVtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Reports/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/_ViewImports.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/WaterParameters/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2F0ZXJQYXJhbWV0ZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/WaterParameters/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2F0ZXJQYXJhbWV0ZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/WaterParameters/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2F0ZXJQYXJhbWV0ZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/WaterParameters/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2F0ZXJQYXJhbWV0ZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/WaterParameters/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2F0ZXJQYXJhbWV0ZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/_ViewStart.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Views/Dashboard/Index.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Views/Reports/Index.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Views/Reports/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Shared/_Layout.cshtml]
+[F:/BTL_CNPM/KoiFishApp.WebApplication/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-sb681nov2x

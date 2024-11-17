@@ -2790,11 +2790,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\BTL_CNPM\\KoiFishApp.WebApplication\\KoiFishApp.WebApplication.csproj",
+      "projectUniqueName": "F:\\BTL_CNPM\\KoiFishApp.WebApplication\\KoiFishApp.WebApplication.csproj",
       "projectName": "KoiFishApp.WebApplication",
-      "projectPath": "G:\\BTL_CNPM\\KoiFishApp.WebApplication\\KoiFishApp.WebApplication.csproj",
+      "projectPath": "F:\\BTL_CNPM\\KoiFishApp.WebApplication\\KoiFishApp.WebApplication.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "G:\\BTL_CNPM\\KoiFishApp.WebApplication\\obj\\",
+      "outputPath": "F:\\BTL_CNPM\\KoiFishApp.WebApplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2812,8 +2812,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "G:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj": {
-              "projectPath": "G:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj"
+            "F:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj": {
+              "projectPath": "F:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj"
             }
           }
         }

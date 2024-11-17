@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj": {}
+    "F:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj": {}
   },
   "projects": {
-    "G:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj": {
+    "F:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj",
+        "projectUniqueName": "F:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj",
         "projectName": "KoiFishApp.Repositories",
-        "projectPath": "G:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj",
+        "projectPath": "F:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "G:\\BTL_CNPM\\KoiFishApp.Repositories\\obj\\",
+        "outputPath": "F:\\BTL_CNPM\\KoiFishApp.Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -81,14 +81,14 @@
         }
       }
     },
-    "G:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj": {
+    "F:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj",
+        "projectUniqueName": "F:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj",
         "projectName": "KoiFishApp.Services",
-        "projectPath": "G:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj",
+        "projectPath": "F:\\BTL_CNPM\\KoiFishApp.Services\\KoiFishApp.Services.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "G:\\BTL_CNPM\\KoiFishApp.Services\\obj\\",
+        "outputPath": "F:\\BTL_CNPM\\KoiFishApp.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -106,8 +106,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "G:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj": {
-                "projectPath": "G:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj"
+              "F:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj": {
+                "projectPath": "F:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj"
               }
             }
           }

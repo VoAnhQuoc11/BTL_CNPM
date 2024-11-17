@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KoiFishApp.WebApplication")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9dcf2ff81533686f5e06a98034a15c49c575f737")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+225ab07ce44b2928b7c584b0aa06119547819fca")]
 [assembly: System.Reflection.AssemblyProductAttribute("KoiFishApp.WebApplication")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KoiFishApp.WebApplication")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

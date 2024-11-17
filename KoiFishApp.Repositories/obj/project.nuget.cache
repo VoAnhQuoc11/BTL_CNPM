@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SzvHsg8/lxc=",
+  "dgSpecHash": "vko1FO2VLHM=",
   "success": true,
-  "projectFilePath": "G:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj",
+  "projectFilePath": "F:\\BTL_CNPM\\KoiFishApp.Repositories\\KoiFishApp.Repositories.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
