@@ -10,6 +10,7 @@ namespace KoiFishApp.Repositories.Interfaces
     public interface IKoiFishGrowthRepository
     {
         Task<List<KoiGrowth>> GetGrowthRecordsByKoiFishIdAsync(int koiId);
+        Task<KoiGrowth> GetGrowthRecordByIdAsync(int koiGrowthId);
         Task AddGrowthRecordAsync(KoiGrowth record);
         Task UpdateGrowthRecordAsync(KoiGrowth record);
         Task DeleteGrowthRecordAsync(int recordId);
