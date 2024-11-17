@@ -1,5 +1,6 @@
-﻿@page
+@page
 @model KoiFishApp.WebApplication.Pages.CTKoiFish.DetailsModel
+
 <link href="~/css/background.css" rel="stylesheet">
 <div>
     <h4>KoiFish</h4>
@@ -71,12 +72,12 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.KoiFish.Pond.PondId)
         </dd>
-        <dt class="col-sm-2">Food Amount</dt>
-        <dd class="col-sm-10">@Model.FoodAmount</dd> <!-- Hiển thị Food Amount -->
+
+
     </dl>
 </div>
 <div>
-    
+
 
     <h4>Growth Records</h4>
     <table class="table">
@@ -84,23 +85,43 @@
             <tr>
                 <th>Date Recorded</th>
                 <th>Size (cm)</th>
-                <th>Weight (g)</th>
+                <th>Weight (kg)</th>
+                <th>Age </th>
+                <th>FoodAmount</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var record in Model.GrowthRecords)
+            @for (int i = 0; i < Model.GrowthRecords.Count; i++)
             {
                 <tr>
-                    <td>@record.Date.GetValueOrDefault().ToString("yyyy-MM-dd")</td>
+                    <td>@Model.GrowthRecords[i].Date.GetValueOrDefault().ToString("yyyy-MM-dd")</td>
+                    <td>@Model.GrowthRecords[i].Size</td>
+                    <td>@Model.GrowthRecords[i].Weight</td>
+                    <td>@Model.GrowthRecords[i].Age</td>
 
-                    <td>@record.Size</td>
-                    <td>@record.Weight</td>
+                    <!-- Hiển thị lượng thức ăn đã tính -->
+                    <td>@Model.FoodAmounts[Model.GrowthRecords[i].KoiGrowthId]</td>
+                    <td>
+                        <a asp-page="/CTKoiFish/EditGrowthRecord" asp-route-koiGrowthId="@Model.GrowthRecords[i].KoiGrowthId" class="btn btn-primary">Edit</a>
+                    </td>
 
+
+                    <td>
+                        <form method="post" asp-page-handler="Delete"
+                              asp-route-koiGrowthId="@Model.GrowthRecords[i].KoiGrowthId"
+                              asp-route-koiId="@Model.KoiFish.KoiId" class="d-inline">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             }
+
+
         </tbody>
     </table>
-
+    <a asp-page="/CTKoiFish/AddKoiGrowth" asp-route-id="@Model.KoiFish.KoiId" class="btn btn-primary">
+        Add Koi Growth
+    </a>
     <h4>Growth Trend</h4>
     <canvas id="growthChart" width="400" height="200"></canvas>
 </div>
@@ -134,9 +155,12 @@
                     y: { title: { display: true, text: 'Growth' } }
                 }
             }
+
         });
     </script>
 }
+
+
 
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.KoiFish.KoiId">Edit</a> |
