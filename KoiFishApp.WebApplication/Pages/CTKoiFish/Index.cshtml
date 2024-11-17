@@ -44,7 +44,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.KoiFish[0].Pond)
             </th>
-            <th>Food Amount</th>
+            
             <th></th>
         </tr>
     </thead>
@@ -85,16 +85,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Pond.PondId)
                 </td>
-                <td>
-                    @if (Model.FoodAmounts.ContainsKey(item.KoiId))
-                    {
-                        @Model.FoodAmounts[item.KoiId].ToString("F2") <!-- Hiển thị lượng thức ăn -->
-                    }
-                    else
-                    {
-                        <span>Not Available</span>
-                    }
-                </td>
+                
                 <td>
                     <a asp-page="./Edit" asp-route-id="@item.KoiId">Edit</a> |
                     <a asp-page="./Details" asp-route-id="@item.KoiId">Details</a> |
