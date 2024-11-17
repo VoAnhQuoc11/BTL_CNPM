@@ -1,0 +1,71 @@
+﻿body {
+    background-image: url("https://i.ibb.co/2khR0BX/z6037036615361-8979d32fb58915612a0aaac7ecb000eb.jpg" );
+    background-size: cover; /* Đảm bảo hình ảnh phủ đầy màn hình */
+    background-size: 100% 100%; /* Đặt kích thước ảnh nền cố định */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Căn giữa chữ "Menu" */
+h2 {
+    text-align: center;
+    font-size: 2rem; /* Kích thước chữ lớn hơn */
+    margin-top: 20px;
+}
+p {
+    text-align: center;
+    font-size: 2rem;
+}
+/* CSS cho các nút trong menu */
+.menu-buttons {
+    display: flex;
+    flex-direction: column; /* Sắp xếp các hàng theo chiều dọc */
+    align-items: center; /* Căn giữa tất cả các hàng */
+    gap: 20px; /* Khoảng cách giữa các hàng */
+    margin-top: 20px;
+}
+
+    .menu-buttons .row {
+        display: flex;
+        justify-content: center; /* Căn giữa các nút trong hàng */
+        gap: 20px; /* Khoảng cách giữa các nút trong cùng một hàng */
+        width: 100%;
+        max-width: 900px; /* Điều chỉnh chiều rộng của row */
+    }
+
+        .menu-buttons .row .button {
+            flex: 1 1 150px; /* Các nút có chiều rộng tối thiểu là 150px */
+            padding: 20px;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .menu-buttons .row .button:hover {
+                transform: scale(1.05);
+            }
+
+        /* Đảm bảo nút cuối cùng trong hàng 3 được căn giữa */
+        .menu-buttons .row:last-child {
+            justify-content: center; /* Căn giữa tất cả các nút */
+        }
+.logout-button {
+    padding: 8px 16px; /* Tùy chỉnh khoảng cách */
+    border: 2px solid blue; /* Khung màu đỏ */
+    color: black; /* Chữ màu trắng */
+    background-color: transparent;
+    font-weight: bold; /* Đậm chữ */
+    border-radius: 5px; /* Bo góc (tuỳ chọn) */
+    text-decoration: none; /* Bỏ gạch chân */
+}
+    .logout-button:hover {
+        background-color: red; /* Đổi màu nền khi hover */
+        color: white; /* Đảm bảo chữ trắng khi hover */
+    }

@@ -1,0 +1,80 @@
+﻿/* Đặt nền cho trang */
+body {
+    background-image: url("https://i.ibb.co/SQbdJtV/unnamed.png");
+    background-size: cover; /* Đảm bảo hình ảnh phủ đầy màn hình */
+    background-size: 100% 100%; /* Đặt kích thước ảnh nền cố định */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container khung đăng nhập */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.85); /* Nền bán trong suốt */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+/* Tiêu đề khung đăng nhập */
+.login-container h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Các ô nhập liệu */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Nút đăng nhập */
+.login-container button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Thông báo lỗi */
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+.register-link {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+    .register-link a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
