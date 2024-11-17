@@ -29,6 +29,11 @@ namespace KoiFishApp.Repositories.Repositories
         {
             return await _context.KoiGrowths.Where(g => g.KoiId == koiId).OrderBy(g => g.Date).ToListAsync(); // Trả về danh sách các bản ghi phát triển
         }
+        public async Task<KoiGrowth> GetGrowthRecordByIdAsync(int koiGrowthId)
+        {
+            return await _context.KoiGrowths
+                .FirstOrDefaultAsync(g => g.KoiGrowthId == koiGrowthId);
+        }
 
         public async Task UpdateGrowthRecordAsync(KoiGrowth record)
         {
