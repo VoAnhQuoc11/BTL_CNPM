@@ -5,36 +5,36 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using KoiCare.Repositories.Enteteis;
-using KoiCare.Services.Interfaces;
+using KoiFishApp.Repositories.Entities;
 
-namespace KoiCare.WebApplication.Pages.EditProducts
+namespace KoiFishApp.WebApplication.Pages.QLGH
 {
     public class DeleteModel : PageModel
     {
+
         private readonly IProductsService _service;
 
-        private readonly QlcktnContext _context;
-        public DeleteModel(IProductsService service, QlcktnContext context)
-        {
-            _service = service;
-            _context = context;
+        public DeleteModel(IProductsService service)
+        {    
+            _service = service;            
         }
 
         [BindProperty]
-        public Product Product { get; set; } = default!;
+        public GioHang Product { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             int Id = 0;
+
             if (id == null)
             {
                 Id = 0;
                 return NotFound();
             }
+
             Id = (int)id;
 
-            var product = await _service.GetProductById(Id);
+            var product = await _service.FindProductInGioHangById(Id);
 
             if (product == null)
             {
@@ -49,19 +49,16 @@ namespace KoiCare.WebApplication.Pages.EditProducts
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            
-
-
             if (id == null)
             {
                 return NotFound();
             }
 
-            var product = await _service.GetProductById((int) id);
+            var product = await _service.FindProductInGioHangById((int) id);
             if (product != null)
             {
                 Product = product;
-                _service.RemoveProduct((int) id);
+                _service.RemoveGioHang((int) id);
             }
 
             return RedirectToPage("./Index");
