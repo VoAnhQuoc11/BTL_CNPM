@@ -1,0 +1,67 @@
+﻿@page
+@model KoiFishApp.WebApplication.Pages.QLGH.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 style="text-align: center; color: #dc3545; font-size: 2.5rem; font-weight: bold;">Xóa sản phẩm</h1>
+<p style="text-align: center; color: #555; font-size: 1.2rem;">Bạn có chắc chắn muốn xóa sản phẩm này? Hành động này không thể hoàn tác.</p>
+
+<div style="width: 60%; margin: 30px auto; padding: 20px; border: 1px solid #dee2e6; border-radius: 10px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);">
+    <h4 style="text-align: center; margin-bottom: 20px;">Thông tin sản phẩm</h4>
+    <dl class="row" style="font-size: 1rem;">
+        <dt class="col-sm-3" style="font-weight: bold;">Tên sản phẩm:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Product.Name)</dd>
+
+        <dt class="col-sm-3" style="font-weight: bold;">Giá:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Product.Price) $</dd>
+
+        <dt class="col-sm-3" style="font-weight: bold;">Số lượng:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Product.Quantity)</dd>
+
+        <dt class="col-sm-3" style="font-weight: bold;">Mô tả:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Product.Description)</dd>
+    </dl>
+
+    <form method="post" style="text-align: center; margin-top: 20px;">
+        <input type="hidden" asp-for="Product.ProductId" />
+        <button type="submit" class="btn btn-danger btn-lg" style="margin-right: 10px;">Xóa</button>
+        <a asp-page="./Index" class="btn btn-secondary btn-lg" style="text-decoration: none;">Quay lại</a>
+    </form>
+</div>
+
+<style>
+    /* Tăng tính thẩm mỹ cho nút */
+    .btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+    }
+
+        .btn-danger:hover {
+            background-color: #b52a37;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: #fff;
+        border: none;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+    /* Kiểu dáng khối sản phẩm */
+    dl.row {
+        line-height: 1.8;
+    }
+</style>
