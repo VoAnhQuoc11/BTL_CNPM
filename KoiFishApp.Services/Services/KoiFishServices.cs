@@ -54,25 +54,7 @@ namespace KoiFishApp.Services.Services
         {
             return await _repositories.GetAllPondsAsync();
         }
-        public async Task<decimal> CalculateFoodAmount(int koiFishId)
-        {
-            var koiFish = await _repositories.GetKoiFishByIdAsync(koiFishId);
-            if (koiFish == null)
-            {
-                throw new ArgumentException("Koi fish not found.");
-            }
-
-            // Kiểm tra xem trọng lượng cá có giá trị (không null) không
-            if (koiFish.Weight.HasValue)
-            {
-                // Chuyển đổi từ double? thành decimal?
-                return (decimal)(koiFish.Weight.Value * 0.02);
-            }
-            else
-            {
-                throw new InvalidOperationException("Koi fish weight is not available.");
-            }
-        }
+       
 
     }
 }
